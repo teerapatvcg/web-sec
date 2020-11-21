@@ -22,7 +22,7 @@
                       <tr role="row">
                         <th
                           class="sorting"
-                          tabindex="0" 
+                          tabindex="0"
                           aria-controls="example1"
                           rowspan="1"
                           colspan="1"
@@ -74,16 +74,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="i in 25" >
+                      <tr v-for="i in 25">
                         <td class="" tabindex="0">Webkit</td>
                         <td>Safari 3.0</td>
                         <td>OSX.4+</td>
                         <td class="sorting_1">522.1</td>
-                        <td><button type="button" class="btn btn-warning">แก้ไข</button></td>
+                        <td>
+                          <button type="button" class="btn btn-warning">
+                            แก้ไข
+                          </button>
+                        </td>
                       </tr>
                     </tbody>
-                    <tfoot>
-                    </tfoot>
+                    <tfoot></tfoot>
                   </table>
                 </div>
               </div>
@@ -100,30 +103,39 @@
 </template>
 
 <script>
-import Menu from'@/components/Menu'
-export default {
-  methods:{
-    ci_home(){
-      window.location.href = "/main";
-    },
-    ci_contact(){
-      window.location.href = "/main";
-    },
-    ci_promotion(){
-      window.location.href = "/main";
-    }
-  },
-  components:{Menu}
 
+import firebase from "firebase";
+import Menu from "@/components/Menu";
+export default {
+  // beforeCreate() {
+  //   firebase.auth().onAuthStateChanged((user) => {
+  //     if (!user) {
+  //       this.$router.replace("/Login");
+  //       //alert("You don't have a permission")
+  //     } else {
+  //       console.log(user.refreshToken);
+  //     }
+  //   });
+  // },
+  methods: {
+    ci_home() {
+      window.location.href = "/main";
+    },
+    ci_contact() {
+      window.location.href = "/main";
+    },
+    ci_promotion() {
+      window.location.href = "/main";
+    },
+  },
+  components: { Menu },
 };
-$(function () {
+$(function() {
   $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  
+    responsive: true,
+    autoWidth: false,
+  });
 });
 </script>
 
-<style>
-</style>
+<style></style>
