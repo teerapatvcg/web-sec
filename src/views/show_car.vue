@@ -1,12 +1,13 @@
 <template>
-  <div>
-    
-    <div class="wrapper"><Menu />
+  <div><Menu />
+    <div class="wrapper">
       <div class="content-wrapper">
         <div class="card text-center">
           <div class="card-header"></div>
           <div class="card-body">
-            <div class="row">
+          <div class="card mx-auto" style="width: 50%;">
+              <div class="card-body">
+              <div class="row">
               <div class="col-12 mx-auto  mt-5 mb-5">
                 <div
                   id="carouselExampleIndicators"
@@ -84,49 +85,43 @@
                 </div>
               </div>
             </div>
-            <h1>รถยอดนิยม</h1>
-            <div class="row">
-              <div class="col-3">
-                <div class="card mx-auto text-center" style="width: 18rem">
-                  <img src="../assets/mit.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title-center">Mitsubishi</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Mitsubishi</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mx-auto" style="width: 18rem">
-                  <img src="../assets/bmw.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title-center">BMW</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">BMW</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mx-auto" style="width: 18rem">
-                  <img
-                    src="../assets/benz.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title-center">Benz</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Benz</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mx-auto" style="width: 18rem">
-                  <img src="../assets/c.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title-center">Chevrolet</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Chevrolet</a>
+                <div class="row">
+                  <div class="col ">
+                    <form action="#">
+                      <div class="row">
+                        <div class="col-6 ">
+                        <div class="alert alert-primary" role="alert">เบอร์โทรศัพท์</div>
+                        </div>
+                        <div class="col-6 ">
+                          <div class="alert alert-success" role="alert">ID LINE</div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 x">
+                          <label for="">0880054314</label>
+                        </div>
+                        <div class="col-6">
+                          <label for="" class="">@teebangkapi</label>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-6  mt-3">
+                        <div class="alert alert-info" role="alert">E-mail</div>
+                        </div>
+                        <div class="col-6  mt-3">
+                          <div class="alert alert-info" role="alert">ที่อยู่ร้าน</div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6">
+                          <label for="">tee@hotmail.com</label>
+                        </div>
+                        <div class="col-6">
+                          <label for="">203/139 บ้านเซนซิริ ทุ่งสุขลา ศรีราชา ชลบุรี 20230</label>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -143,21 +138,37 @@
 </template>
 
 <script>
-import Menu from "@/components/Menu";
+import Menu from'@/components/Menu'
 export default {
-  methods: {
-    ci_home() {
+  methods:{
+    ci_home(){
       window.location.href = "/main";
     },
-    ci_contact() {
+    ci_contact(){
       window.location.href = "/main";
     },
-    ci_promotion() {
+    ci_promotion(){
       window.location.href = "/main";
-    },
+    }
   },
-  components: { Menu },
+  components:{Menu}
+
 };
+
 </script>
 
-<style></style>
+<style>
+.manu {
+  width: 30%;
+}
+.x {
+  float: right;
+}
+.y {
+  float: left;
+}
+.te {
+  width: 100%;
+  height: 500px;
+}
+</style>

@@ -13,24 +13,42 @@
 
       <!-- SEARCH FORM -->
       <form class="form-inline ml-3">
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary" @click="ci_home">
-            Home
-          </button>
-          <button type="button" class="btn btn-success" @click="ci_contact">
-            Contact
-          </button>
-          <button type="button" class="btn btn-danger" @click="ci_promotion">
-            Promotion
-          </button>
-        </div>
+        
       </form>
 
       <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+      <div class="btn-group">
+      
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="islogin">
+                  Management
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tools" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M0 1l1-1 3.081 2.2a1 1 0 0 1 .419.815v.07a1 1 0 0 0 .293.708L10.5 9.5l.914-.305a1 1 0 0 1 1.023.242l3.356 3.356a1 1 0 0 1 0 1.414l-1.586 1.586a1 1 0 0 1-1.414 0l-3.356-3.356a1 1 0 0 1-.242-1.023L9.5 10.5 3.793 4.793a1 1 0 0 0-.707-.293h-.071a1 1 0 0 1-.814-.419L0 1zm11.354 9.646a.5.5 0 0 0-.708.708l3 3a.5.5 0 0 0 .708-.708l-3-3z"/>
+                    <path fill-rule="evenodd" d="M15.898 2.223a3.003 3.003 0 0 1-3.679 3.674L5.878 12.15a3 3 0 1 1-2.027-2.027l6.252-6.341A3 3 0 0 1 13.778.1l-2.142 2.142L12 4l1.757.364 2.141-2.141zm-13.37 9.019L3.001 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu ">
+                  <a class="dropdown-item" href="/insert">Insert</a>
+                  <a class="dropdown-item" href="/edit">Edit</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/home_edit">Edit Home</a>
+                  <a class="dropdown-item" href="/con_edit">Edit Contact</a>
+                  <a class="dropdown-item" href="/promo_edit">Edit Promotion</a>
+                </div>
+              </div>
+              
+      <button class="btn btn-danger ml-3" @click="logout" v-if="islogin">Logout 
+      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-power" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z"/>
+        <path fill-rule="evenodd" d="M7.5 8V1h1v7h-1z"/>
+      </svg>
+</button>
+    </ul>
+      
     </nav>
     <aside class="main-sidebar elevation-4 text-left">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
+      <a href="/main" class="brand-link">
         <img
           src="dist/img/AdminLTELogo.png"
           alt="AdminLTE Logo"
@@ -44,16 +62,15 @@
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
+          <div class="image" v-if="islogin">
             <img
               src="dist/img/user2-160x160.jpg"
               class="img-circle elevation-2"
               alt="User Image"
             />
           </div>
-          <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
-            <br />
+          <div class="info" v-if="islogin">
+            <a href="#" class="d-block">Admin</a>
           </div>
         </div>
         <div class="row">
@@ -142,7 +159,7 @@
                   <option style="color: blue" value="" selected>-</option>
                 </select>
               </div>
-              <br />
+              <br>
               <button
                 type="submit"
                 class="btn btn-warning"
@@ -151,51 +168,15 @@
                 ค้นหา
               </button>
 
-              <br /><br /><br />
-              <li class="nav-item has-treeview" v-if="islogin">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-table"></i>
-                  <p>
-                    จัดการ
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview" style="display: none;">
-                  <li class="nav-item">
-                    <a href="/insert" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Insert</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/edit" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Edit</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/home_edit" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Edit Home</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/con_edit" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Edit Contact</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/promo_edit" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Edit Promotion</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
             </ul>
           </form>
-          <button class="btn btn-danger" @click="logout" v-if="islogin">logout</button>
+          
         </nav>
         <!-- /.sidebar-menu -->
       </div>
@@ -217,33 +198,33 @@ export default {
     firebase.auth().onAuthStateChanged((user) => {
       // alert(user);
       if (!user) {
-        alert("No Logged /in");
+        //alert("No Logged /in");
        
       } else {
-        alert("Logged in");
+        //alert("Logged in");
         this.islogin = true;
       }
     });
   },
   methods: {
     logout() {
-      alert(123456);
+     // alert(123456);
       firebase
         .auth()
         .signOut()
         .then((res) => {
           this.$router.replace("/login");
-          alert(res);
+          //alert(res);
         });
     },
     ci_home() {
       window.location.href = "/main";
     },
     ci_contact() {
-      window.location.href = "/main";
+      window.location.href = "/show_con";
     },
     ci_promotion() {
-      window.location.href = "/main";
+      window.location.href = "/show_pro";
     },
   },
   components: { Menu },

@@ -8,12 +8,12 @@ function check(to, from, next) {
   firebase.auth().onAuthStateChanged((user) => {
     // alert(user);
     if (!user) {
-      alert("No Logged /in");
+      //alert("No Logged /in");
       next({
         path: "/login",
       });
     } else {
-      alert("Logged in");
+      //alert("Logged in");
       next();
     }
   });
@@ -96,6 +96,24 @@ const routes = [
     name: 'seach',
     beforeEnter: check,
     component: () => import( '../views/seach.vue')
+  }
+  ,
+  {
+    path: '/show_con',
+    name: 'show_con',
+    component: () => import( '../views/show_con.vue')
+  }
+  ,
+  {
+    path: '/show_pro',
+    name: 'show_pro',
+    component: () => import( '../views/show_pro.vue')
+  }
+  ,
+  {
+    path: '/show_car',
+    name: 'show_car',
+    component: () => import( '../views/show_car.vue')
   }
 ]
 

@@ -3,227 +3,139 @@
     <div class="wrapper">
       <Menu />
       <div class="content-wrapper">
-        <div class="card text-center">
-          <div class="card-header"></div>
-          <div class="card-body ">
-            <div class="card mx-auto" style="width: 50%;">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col ">
-                    <form action="#">
-                      <div class="row">
-                        <div class="col-6 text-right">
-                          <label for="exampleFormControlSelect1">รถจัดโปร คันที่ 1</label>
-                        </div>
-                        <div class="col-6 text-left">
-                          <label for="exampleFormControlSelect1">รถจัดโปร คันที่ 2</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-6 x">
-                          <div class="form-group">
-                            <select
-                              class="form-control manu mx-auto x"
-                              id="exampleFormControlSelect1"
-                            >
-                              <option style="color: blue" value="" selected
-                                >-</option
-                              >
-                              <option value="Accord">Accord</option>
-                              <option value="Airwave">Airwave</option>
-                              <option value="BR-V">BR-V</option>
-                              <option value="Brio">Brio</option>
-                              <option value="City">City</option>
-                              <option value="Civic">Civic</option>
-                              <option value="CR-V">CR-V</option>
-                              <option value="CR-X del Sol">CR-X del Sol</option>
-                              <option value="CR-Z">CR-Z</option>
-                              <option value="e">e</option>
-                              <option value="Freed">Freed</option>
-                              <option value="HR-V">HR-V</option>
-                              <option value="Integra">Integra</option>
-                              <option value="Jazz">Jazz</option>
-                              <option value="Legend">Legend</option>
-                              <option value="Mobilio">Mobilio</option>
-                              <option value="N-BOX">N-BOX</option>
-                              <option value="N-ONE">N-ONE</option>
-                              <option value="NSX">NSX</option>
-                              <option value="Odyssey">Odyssey</option>
-                              <option value="Prelude">Prelude</option>
-                              <option value="S2000">S2000</option>
-                              <option value="STEPWGN SPADA">STEPWGN SPADA</option>
-                              <option value="Stream">Stream</option>
-                              <option value="Today">Today</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-group">
-                            <select
-                              class="form-control manu mx-auto x"
-                              id="exampleFormControlSelect1"
-                            >
-                              <option style="color: blue" value="" selected
-                                >-</option
-                              >
-                              <option value="Accord">Accord</option>
-                              <option value="Airwave">Airwave</option>
-                              <option value="BR-V">BR-V</option>
-                              <option value="Brio">Brio</option>
-                              <option value="City">City</option>
-                              <option value="Civic">Civic</option>
-                              <option value="CR-V">CR-V</option>
-                              <option value="CR-X del Sol">CR-X del Sol</option>
-                              <option value="CR-Z">CR-Z</option>
-                              <option value="e">e</option>
-                              <option value="Freed">Freed</option>
-                              <option value="HR-V">HR-V</option>
-                              <option value="Integra">Integra</option>
-                              <option value="Jazz">Jazz</option>
-                              <option value="Legend">Legend</option>
-                              <option value="Mobilio">Mobilio</option>
-                              <option value="N-BOX">N-BOX</option>
-                              <option value="N-ONE">N-ONE</option>
-                              <option value="NSX">NSX</option>
-                              <option value="Odyssey">Odyssey</option>
-                              <option value="Prelude">Prelude</option>
-                              <option value="S2000">S2000</option>
-                              <option value="STEPWGN SPADA" >STEPWGN SPADA</option>
-                              <option value="Stream">Stream</option>
-                              <option value="Today">Today</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-6 text-right mt-3">
-                          <label for="exampleInputEmail1">รถจัดโปร คันที่ 3</label>
-                        </div>
-                        <div class="col-6 text-left mt-3">
-                          <label for="exampleInputEmail1">รถจัดโปร คันที่ 4</label
-                          >
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="form-group">
-                            <select
-                              class="form-control manu mx-auto x"
-                              id="exampleFormControlSelect1"
-                            >
-                              <option style="color: blue" value="" selected
-                                >-</option
-                              >
-                              <option value="Accord">Accord</option>
-                              <option value="Airwave">Airwave</option>
-                              <option value="BR-V">BR-V</option>
-                              <option value="Brio">Brio</option>
-                              <option value="City">City</option>
-                              <option value="Civic">Civic</option>
-                              <option value="CR-V">CR-V</option>
-                              <option value="CR-X del Sol">CR-X del Sol</option>
-                              <option value="CR-Z">CR-Z</option>
-                              <option value="e">e</option>
-                              <option value="Freed">Freed</option>
-                              <option value="HR-V">HR-V</option>
-                              <option value="Integra">Integra</option>
-                              <option value="Jazz">Jazz</option>
-                              <option value="Legend">Legend</option>
-                              <option value="Mobilio">Mobilio</option>
-                              <option value="N-BOX">N-BOX</option>
-                              <option value="N-ONE">N-ONE</option>
-                              <option value="NSX">NSX</option>
-                              <option value="Odyssey">Odyssey</option>
-                              <option value="Prelude">Prelude</option>
-                              <option value="S2000">S2000</option>
-                              <option value="STEPWGN SPADA" >STEPWGN SPADA</option>
-                              <option value="Stream">Stream</option>
-                              <option value="Today">Today</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-group">
-                            <select
-                              class="form-control manu mx-auto x"
-                              id="exampleFormControlSelect1"
-                            >
-                              <option style="color: blue" value="" selected
-                                >-</option
-                              >
-                              <option value="Accord">Accord</option>
-                              <option value="Airwave">Airwave</option>
-                              <option value="BR-V">BR-V</option>
-                              <option value="Brio">Brio</option>
-                              <option value="City">City</option>
-                              <option value="Civic">Civic</option>
-                              <option value="CR-V">CR-V</option>
-                              <option value="CR-X del Sol">CR-X del Sol</option>
-                              <option value="CR-Z">CR-Z</option>
-                              <option value="e">e</option>
-                              <option value="Freed">Freed</option>
-                              <option value="HR-V">HR-V</option>
-                              <option value="Integra">Integra</option>
-                              <option value="Jazz">Jazz</option>
-                              <option value="Legend">Legend</option>
-                              <option value="Mobilio">Mobilio</option>
-                              <option value="N-BOX">N-BOX</option>
-                              <option value="N-ONE">N-ONE</option>
-                              <option value="NSX">NSX</option>
-                              <option value="Odyssey">Odyssey</option>
-                              <option value="Prelude">Prelude</option>
-                              <option value="S2000">S2000</option>
-                              <option value="STEPWGN SPADA" >STEPWGN SPADA</option>
-                              <option value="Stream">Stream</option>
-                              <option value="Today">Today</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div class="row ">
-                            <div class="col-6 offset-3 text-center mt-3 ">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-success">Success</button>
-                            </div>
-                            </div>
-                        </div>
-                    </form>
-                  </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">DataTable with default features</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+              <div class="row">
+                <div class="col-sm-12">
+                  <table
+                    id="example1"
+                    class="table table-bordered table-striped dataTable dtr-inline "
+                    role="grid"
+                    aria-describedby="example1_info"
+                  >
+                    <thead class="bg-success">
+                      <tr role="row">
+                        <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="example1"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Rendering engine: activate to sort column ascending"
+                        >
+                          รหัส
+                        </th>
+                        <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="example1"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Browser: activate to sort column ascending"
+                        >
+                          รุ่น
+                        </th>
+                        <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="example1"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Platform(s): activate to sort column ascending"
+                        >
+                          ทะเบียน
+                        </th>
+                        <th
+                          class="sorting_desc"
+                          tabindex="0"
+                          aria-controls="example1"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Engine version: activate to sort column ascending"
+                          aria-sort="descending"
+                        >
+                          สถานะ
+                        </th>
+                        <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="example1"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="CSS grade: activate to sort column ascending"
+                        >
+                          แก้ไขข้อมูล
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="i in 25">
+                        <td class="" tabindex="0">Webkit</td>
+                        <td>Safari 3.0</td>
+                        <td>OSX.4+</td>
+                        <td class="sorting_1">522.1</td>
+                        <td>
+                          <button type="button" class="btn btn-warning">
+                            แก้ไข
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot></tfoot>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card-footer text-muted"></div>
+          <!-- /.card-body -->
         </div>
       </div>
-      <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-      </aside>
     </div>
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
   </div>
 </template>
 
 <script>
-import Menu from'@/components/Menu'
-export default {
-  methods:{
-    ci_home(){
-      window.location.href = "/main";
-    },
-    ci_contact(){
-      window.location.href = "/main";
-    },
-    ci_promotion(){
-      window.location.href = "/main";
-    }
-  },
-  components:{Menu}
 
+import firebase from "firebase";
+import Menu from "@/components/Menu";
+export default {
+  // beforeCreate() {
+  //   firebase.auth().onAuthStateChanged((user) => {
+  //     if (!user) {
+  //       this.$router.replace("/Login");
+  //       //alert("You don't have a permission")
+  //     } else {
+  //       console.log(user.refreshToken);
+  //     }
+  //   });
+  // },
+  methods: {
+    ci_home() {
+      window.location.href = "/main";
+    },
+    ci_contact() {
+      window.location.href = "/main";
+    },
+    ci_promotion() {
+      window.location.href = "/main";
+    },
+  },
+  components: { Menu },
 };
+$(function() {
+  $("#example1").DataTable({
+    responsive: true,
+    autoWidth: false,
+  });
+});
 </script>
 
-<style>
-
-</style>
+<style></style>

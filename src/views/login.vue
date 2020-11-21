@@ -39,7 +39,7 @@ export default {
             
           },
           (err) => {
-            alert(err.message);
+            //alert(err.message);
           }
         );
       e.preventDefault();

@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div><Menu />
     <div class="wrapper">
-      <Menu />
       <div class="content-wrapper">
         <div class="card text-center">
           <div class="card-header"></div>
