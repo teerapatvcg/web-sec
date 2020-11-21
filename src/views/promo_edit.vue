@@ -5,7 +5,7 @@
       <div class="content-wrapper">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
+            <h3 class="card-title">Promotion</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -18,7 +18,7 @@
                     role="grid"
                     aria-describedby="example1_info"
                   >
-                    <thead class="bg-success">
+                    <thead class="bg-danger">
                       <tr role="row">
                         <th
                           class="sorting"
@@ -59,17 +59,17 @@
                           aria-label="Engine version: activate to sort column ascending"
                           aria-sort="descending"
                         >
-                          สถานะ
+                          เลือก
                         </th>
-                        <th
+                         <th
                           class="sorting"
                           tabindex="0"
                           aria-controls="example1"
                           rowspan="1"
                           colspan="1"
-                          aria-label="CSS grade: activate to sort column ascending"
+                          aria-label="Rendering engine: activate to sort column ascending"
                         >
-                          แก้ไขข้อมูล
+                          เลือก
                         </th>
                       </tr>
                     </thead>
@@ -79,11 +79,7 @@
                         <td>Safari 3.0</td>
                         <td>OSX.4+</td>
                         <td class="sorting_1">522.1</td>
-                        <td>
-                          <button type="button" class="btn btn-warning">
-                            แก้ไข
-                          </button>
-                        </td>
+                        <td class="sorting_1"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
                       </tr>
                     </tbody>
                     <tfoot></tfoot>
