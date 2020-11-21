@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div><Menu />
     <div class="wrapper">
-      <Menu />
+      
       <div class="content-wrapper">
         <div class="card">
           <div class="card-header">
@@ -59,7 +59,7 @@
                           aria-label="Engine version: activate to sort column ascending"
                           aria-sort="descending"
                         >
-                          เลือก
+                          สถานะ
                         </th>
                          <th
                           class="sorting"
@@ -71,6 +71,16 @@
                         >
                           เลือก
                         </th>
+                        <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="example1"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Rendering engine: activate to sort column ascending"
+                        >
+                          ลดราคา
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -80,10 +90,12 @@
                         <td>OSX.4+</td>
                         <td class="sorting_1">522.1</td>
                         <td class="sorting_1"><input type="checkbox" class="form-check-input" id="exampleCheck1"></td>
+                        <td class="sorting_1"><input type="number" ></td>
                       </tr>
                     </tbody>
                     <tfoot></tfoot>
                   </table>
+                  <button type="button" class="btn btn-success">Success</button>
                 </div>
               </div>
             </div>

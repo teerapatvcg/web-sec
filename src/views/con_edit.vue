@@ -11,10 +11,10 @@
                   <div class="col ">
                     <form action="#">
                       <div class="row">
-                        <div class="col-6 text-right">
+                        <div class="col-6 ">
                           <label for="exampleFormControlSelect1">เบอร์โทรศัพท์</label>
                         </div>
-                        <div class="col-6 text-left">
+                        <div class="col-6 ">
                           <label for="exampleFormControlSelect1">ID LINE</label>
                         </div>
                       </div>
@@ -40,10 +40,10 @@
                       </div>
 
                       <div class="row">
-                        <div class="col-6 text-right mt-3">
+                        <div class="col-6  mt-3">
                           <label for="exampleInputEmail1">E-mail</label>
                         </div>
-                        <div class="col-6 text-left mt-3">
+                        <div class="col-6  mt-3">
                           <label for="exampleInputEmail1">ที่อยู่</label
                           >
                         </div>

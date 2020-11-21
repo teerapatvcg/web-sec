@@ -5,7 +5,7 @@
         <div class="card text-center">
           <div class="card-header"></div>
           <div class="card-body">
-          <div class="alert alert-primary" role="alert">รถจัด Promotion</div>
+          <div class="alert alert-danger" role="alert">รถจัด Promotion</div>
             <div class="row">
               <div class="col-3">
                 <div class="card mx-auto text-center" style="width: 18rem">
