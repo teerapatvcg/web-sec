@@ -42,6 +42,7 @@ export default {
           },
           (err) => {
             //alert(err.message);
+            swal("Good job!", "You clicked the button!", "error");
           }
         );
       e.preventDefault();
