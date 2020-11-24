@@ -19,6 +19,7 @@
 
 <script>
 import firebase from "firebase";
+import swal from "sweetalert";
 export default {
   name: "Login",
   data: function() {
@@ -34,6 +35,7 @@ export default {
             var user = firebase.auth().currentUser;
             console.log(user);
             if (user != null) {
+              swal("Good job!", "You clicked the button!", "success");
               this.$router.replace("/main");
             }
             
