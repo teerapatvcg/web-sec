@@ -5,7 +5,6 @@
         <div class="card text-center">
           <div class="card-header"></div>
           <div class="card-body">
-      
               <div class="row">
                 <div class="col-6 text-right">
                   <label for="exampleFormControlSelect1">รุ่น</label>
@@ -21,8 +20,9 @@
                       name="Model"
                       class="form-control manu mx-auto x"
                       id="Model"
+                      required
                     >
-                      <option style="color: blue" value="" selected> </option>
+                      <option value="" disabled selected>-</option>
                       <option value="Accord">Accord</option>
                       <option value="Airwave">Airwave</option>
                       <option value="BR-V">BR-V</option>
@@ -57,8 +57,9 @@
                       name="Year"
                       class="form-control manu mx-auto y"
                       id="exampleFormControlSelect1"
+                      required
                     >
-                      <option style="color: blue" value="" selected> </option>
+                      <option value="" disabled selected>-</option>
                       <option value="2020">2020</option>
                       <option value="2019">2019</option>
                       <option value="2018">2018</option>
@@ -171,6 +172,7 @@
                       type="text"
                       class="form-control manu mx-auto x"
                       id="exampleInputEmail1"
+                      required
                     />
                   </div>
                 </div>
@@ -181,6 +183,7 @@
                       type="number"
                       class="form-control manu mx-auto y"
                       id="exampleInputEmail1"
+                      required
                     />
                   </div>
                 </div>
@@ -200,8 +203,9 @@
                     name="Gear"
                       class="form-control manu mx-auto x"
                       id="exampleFormControlSelect1"
+                      required
                     >
-                      <option style="color: blue" value="" selected> </option>
+                      <option value="" disabled selected>-</option>
                       <option value="Auto">Auto</option>
                       <option value="Manual">Manual</option>
                     </select>
@@ -213,8 +217,9 @@
                       name="seats"
                       class="form-control manu mx-auto y"
                       id="exampleFormControlSelect1"
+                      required
                     >
-                      <option style="color: blue" value="" selected> </option>
+                      <option value="" disabled selected>-</option>
                       <option value="2">2</option>
                       <option value="5">5</option>
                       <option value="7">7</option>
@@ -238,6 +243,7 @@
                       type="number"
                       class="form-control manu mx-auto x"
                       id="exampleInputEmail1"
+                      required
                     />
                   </div>
                 </div>
@@ -247,8 +253,9 @@
                      name="Color"
                       class="form-control manu mx-auto y"
                       id="exampleFormControlSelect1"
+                      required
                     >
-                      <option style="color: blue" value="" selected> </option>
+                      <option value="" disabled selected>-</option>
                       <option value="Accord">ขาว</option>
                       <option value="Airwave">แดง</option>
                       <option value="Accord">ดำ</option>
@@ -281,6 +288,7 @@
                       type="text"
                       class="form-control manu mx-auto x"
                       id="exampleInputEmail1"
+                      required
                     />
                   </div>
                 </div>
@@ -290,8 +298,9 @@
                     name="Province"
                       class="form-control manu mx-auto y"
                       id="exampleFormControlSelect1"
+                      required
                     >
-                      <option value="" selected> </option>
+                      <option value="" disabled selected>-</option>
                       <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
                       <option value="กระบี่">กระบี่ </option>
                       <option value="กาญจนบุรี">กาญจนบุรี </option>
@@ -390,6 +399,7 @@
                       type="text"
                       class="form-control manu mx-auto x"
                       id="exampleInputEmail1"
+                      required
                     />
                   </div>
                 </div>
@@ -400,6 +410,7 @@
                       type="number"
                       class="form-control manu mx-auto y"
                       id="exampleInputEmail1"
+                      
                     />
                   </div>
                 </div>
@@ -413,6 +424,7 @@
                 <div class="col-12 offset-4 text-center mt-3 text-center">
                   <div class="form-group">
                     <select
+                    required
                     name="Status"
                       class="form-control manu mx-auto y"
                       id="exampleFormControlSelect1"
@@ -431,7 +443,7 @@
               <div class="row ">
                 <div class="col-4 offset-4 text-right mt-3 text-center">
                   <div class="form-group">
-                    <textarea  name="Detail" class="form-control te" id="exampleFormControlTextarea1" cols="40"></textarea>
+                    <textarea  name="Detail" class="form-control te" id="exampleFormControlTextarea1" cols="40" required></textarea>
                   </div>
                 </div>
               </div>
@@ -439,7 +451,7 @@
                 <div class="col-4 offset-4 text-left mt-3 ">
                   <div class="form-group">
                     <label for="exampleFormControlFile1">Example file image</label>
-                    <input type="file" id="file" name="file[]" multiple/>
+                    <input type="file" id="files" name="files[]" multiple/>
                   </div>
                 </div>
               </div>
@@ -463,12 +475,64 @@
 </template>
 
 <script>
-import Menu from'@/components/Menu'
+import Menu from'@/components/Menu';
+import firebase from "firebase";
+import swal from 'sweetalert';
 export default {
-  methods:{
-     test() {
+  data() {
+    return {
+      serial: "",
+      datas: [],
+    };
+  },
+  methods: {
+    async test() {
+      var storageRef = firebase.storage().ref("img");
+      // Get the file from DOM
+        var file = document.getElementById("files").files[0];
+        var file1 = document.getElementById("files").files[0];
+        var file2 = document.getElementById("files").files[0];
+      console.log(file.name);
+      console.log(file1.name);
+      console.log(file2.name);
+     // console.log(file2.name);
+      //dynamically s1et reference to the file name
+      var thisRef = storageRef.child(file.name);
+      //put request upload file to firebase storage
+      thisRef.put(file).then((snapshot) => {
+        swal("Good job!", "You clicked the button!", "success");
+        console.log("Uploaded a blob or file!");
+      });
+      
+      //   const field = document.querySelector("input[name=test]").value;
+      //   console.log(field);
+      //   var storageRef = firebase.storage().ref("img");
+      //   var forestRef = storageRef.child("Daco_4102983.png");
+      const storage = firebase.storage();
+      // let linkimg = "";
+      // Get metadata properties
+      let linkimg;
+      let self = this;
+      await storage
+        .ref("img")
+        .child(file.name)
+        .getDownloadURL()
+        .then((url) => {
+          // console.log(typeof url);
+          // console.log(url);
+          self.linkimg = url;
+          self.datas.push(url);
+        });
+      console.log(linkimg);
+      console.log(self.linkimg);
+      console.log(self.datas);
+      alert(self.datas[0]);
+      alert(self.datas[1]);
+      alert(self.datas[2]);
+      // console.log(datas);
       const axios = require("axios").default;
       var data = new FormData();
+      var count=0;
       data.append("Model", document.querySelector("select[name=Model]").value);
       data.append("Year", document.querySelector("select[name=Year]").value);
       data.append("Detailcar", document.querySelector("input[name=Detailcar]").value);
@@ -483,24 +547,33 @@ export default {
       data.append("Promotion", document.querySelector("input[name=Promotion]").value);
       data.append("Status", document.querySelector("select[name=Status]").value);
       data.append("Detail", document.querySelector("textarea[name=Detail]").value);
+      data.append("Pic1", self.datas[0]);
+      data.append("Pic2", self.datas[1]);
+      data.append("Pic3", self.datas[2]);
       console.log(data);
-      data.forEach((element) => {
+      if(1)
+      {
+        data.forEach((element) => {
         console.log(element);
+        console.log(count);
+        count++;
       });
-      axios.post("http://localhost:80/insertmain.php", data).then((response) => {
+      }
+      
+      if(count>=12){
+         axios.post("http://localhost:80/insertmain.php", data).then((response) => {
         console.log(response.data);
+        console.log(count);
       }
       );
-    },
-    ci_home(){
-      window.location.href = "/main";
-    },
-    ci_contact(){
-      window.location.href = "/main";
-    },
-    ci_promotion(){
-      window.location.href = "/main";
+      }
+      else{
+        alert(count);
+        console.log(count);
+      }
+     
     }
+    
   },
   
   components:{Menu}

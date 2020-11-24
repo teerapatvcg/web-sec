@@ -1,5 +1,6 @@
 <template>
-  <div><Menu />
+  <div>
+    <Menu />
     <div class="wrapper">
       <div class="content-wrapper">
         <div class="card text-center">
@@ -12,7 +13,9 @@
                     <form action="#">
                       <div class="row">
                         <div class="col-6 ">
-                          <label for="exampleFormControlSelect1">เบอร์โทรศัพท์</label>
+                          <label for="exampleFormControlSelect1"
+                            >เบอร์โทรศัพท์</label
+                          >
                         </div>
                         <div class="col-6 ">
                           <label for="exampleFormControlSelect1">ID LINE</label>
@@ -22,19 +25,21 @@
                         <div class="col-6 x">
                           <div class="form-group">
                             <input
-                            type="text"
-                            class="form-control manu mx-auto x"
-                            id="exampleInputEmail1"
+                              name="tel"
+                              type="text"
+                              class="form-control manu mx-auto x"
+                              id="exampleInputEmail1"
                             />
                           </div>
                         </div>
                         <div class="col-6">
                           <div class="form-group">
                             <input
-                                type="text"
-                                class="form-control manu mx-auto x"
-                                id="exampleInputEmail1"
-                                />
+                              name="line"
+                              type="text"
+                              class="form-control manu mx-auto x"
+                              id="exampleInputEmail1"
+                            />
                           </div>
                         </div>
                       </div>
@@ -44,39 +49,43 @@
                           <label for="exampleInputEmail1">E-mail</label>
                         </div>
                         <div class="col-6  mt-3">
-                          <label for="exampleInputEmail1">ที่อยู่</label
-                          >
+                          <label for="exampleInputEmail1">ที่อยู่</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-6">
                           <div class="form-group">
-                           <input
-                            type="text"
-                            class="form-control manu mx-auto x"
-                            id="exampleInputEmail1"
+                            <input
+                              name="email"
+                              type="text"
+                              class="form-control manu mx-auto x"
+                              id="exampleInputEmail1"
                             />
                           </div>
                         </div>
                         <div class="col-6">
                           <div class="form-group">
                             <input
-                                type="text"
-                                class="form-control manu mx-auto x"
-                                id="exampleInputEmail1"
-                                />
+                              name="address"
+                              type="text"
+                              class="form-control manu mx-auto x"
+                              id="exampleInputEmail1"
+                            />
                           </div>
                         </div>
                       </div>
+
                       
-                      <div class="row ">
-                            <div class="col-6 offset-3 text-center mt-3 ">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-success">Success</button>
-                            </div>
-                            </div>
-                        </div>
                     </form>
+                    <div class="row ">
+                        <div class="col-6 offset-3 text-center mt-3 ">
+                          <div class="form-group">
+                            <button class="btn btn-success" @click="test">
+                              Success
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -93,24 +102,45 @@
 </template>
 
 <script>
-import Menu from'@/components/Menu'
+import Menu from "@/components/Menu";
+import firebase from "firebase";
+import swal from "sweetalert";
 export default {
-  methods:{
-    ci_home(){
-      window.location.href = "/main";
-    },
-    ci_contact(){
-      window.location.href = "/main";
-    },
-    ci_promotion(){
-      window.location.href = "/main";
-    }
+  data() {
+    return {
+      serial: "",
+      datas: [],
+    };
   },
-  components:{Menu}
+  methods: {
+    async test() {
+      const axios = require("axios").default;
+      var data = new FormData();
+      var count = 0;
+      data.append("tel", document.querySelector("input[name=tel]").value);
+      data.append("line", document.querySelector("input[name=line]").value);
+      data.append("email", document.querySelector("input[name=email]").value);
+      data.append(
+        "address",
+        document.querySelector("input[name=address]").value
+      );
+      console.log(data);
+      if (1) {
+        data.forEach((element) => {
+          console.log(element);
+          console.log(count);
+          count++;
+        });
+      }
+      axios.post("http://localhost:80/contact.php", data).then((response) => {
+        console.log(response.data);
+        console.log(count);
+      });
+    },
+  },
 
+  components: { Menu },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
