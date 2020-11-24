@@ -69,7 +69,27 @@
                           colspan="1"
                           aria-label="CSS grade: activate to sort column ascending"
                         >
+                          Promotion
+                        </th>
+                        <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="example1"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="CSS grade: activate to sort column ascending"
+                        >
                           แก้ไขข้อมูล
+                        </th>
+                        <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="example1"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="CSS grade: activate to sort column ascending"
+                        >
+                          ลบ
                         </th>
                       </tr>
                     </thead>
@@ -79,9 +99,15 @@
                         <td>Safari 3.0</td>
                         <td>OSX.4+</td>
                         <td class="sorting_1">522.1</td>
+                        <td class="sorting_1">จัดโปร</td>
                         <td>
                           <button type="button" class="btn btn-warning">
                             แก้ไข
+                          </button>
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-danger">
+                            ลบ
                           </button>
                         </td>
                       </tr>

@@ -33,7 +33,6 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="/home_edit">Edit Home</a>
                   <a class="dropdown-item" href="/con_edit">Edit Contact</a>
-                  <a class="dropdown-item" href="/promo_edit">Edit Promotion</a>
                 </div>
               </div>
               

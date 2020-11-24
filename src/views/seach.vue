@@ -1,6 +1,6 @@
 <template>
-  <div><Menu />
-    <div class="wrapper">
+  <div>
+    <div class="wrapper"><Menu />
       <div class="content-wrapper">
         <div class="card text-center">
           <div class="card-header"></div>
@@ -8,12 +8,13 @@
           <div class="alert alert-primary" role="alert">รถที่หา</div>
             <div class="row">
               <div class="col-3">
-                <div class="card mx-auto text-center" style="width: 18rem">
-                  <img src="../assets/mit.png" class="card-img-top" alt="..." />
+                <div class="card mx-auto" style="width: 18rem">
+                  <img src="../assets/bmw.png" class="card-img-top" alt="..." />
                   <div class="card-body">
-                    <h5 class="card-title-center">Mitsubishi</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Mitsubishi</a>
+                    <h5 class="card-title-center">BMW</h5>
+                    <p class="card-text">Detail</p>
+                    <p class="card-text">Price</p>
+                    <a href="#" class="btn btn-primary">ดู</a>
                   </div>
                 </div>
               </div>
@@ -22,32 +23,31 @@
                   <img src="../assets/bmw.png" class="card-img-top" alt="..." />
                   <div class="card-body">
                     <h5 class="card-title-center">BMW</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">BMW</a>
+                    <p class="card-text">Detail</p>
+                    <p class="card-text">Price</p>
+                    <a href="#" class="btn btn-primary">ดู</a>
                   </div>
                 </div>
               </div>
               <div class="col-3">
                 <div class="card mx-auto" style="width: 18rem">
-                  <img
-                    src="../assets/benz.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
+                  <img src="../assets/bmw.png" class="card-img-top" alt="..." />
                   <div class="card-body">
-                    <h5 class="card-title-center">Benz</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Benz</a>
+                    <h5 class="card-title-center">BMW</h5>
+                    <p class="card-text">Detail</p>
+                    <p class="card-text">Price</p>
+                    <a href="#" class="btn btn-primary">ดู</a>
                   </div>
                 </div>
               </div>
               <div class="col-3">
                 <div class="card mx-auto" style="width: 18rem">
-                  <img src="../assets/c.png" class="card-img-top" alt="..." />
+                  <img src="../assets/bmw.png" class="card-img-top" alt="..." />
                   <div class="card-body">
-                    <h5 class="card-title-center">Chevrolet</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Chevrolet</a>
+                    <h5 class="card-title-center">BMW</h5>
+                    <p class="card-text">Detail</p>
+                    <p class="card-text">Price</p>
+                    <a href="#" class="btn btn-primary">ดู</a>
                   </div>
                 </div>
               </div>

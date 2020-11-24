@@ -91,8 +91,9 @@
                   <img src="../assets/mit.png" class="card-img-top" alt="..." />
                   <div class="card-body">
                     <h5 class="card-title-center">Mitsubishi</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Mitsubishi</a>
+                    <p class="card-text">Detail</p>
+                    <p class="card-text">Price</p>
+                    <a href="#" class="btn btn-primary">ดู</a>
                   </div>
                 </div>
               </div>
@@ -101,8 +102,9 @@
                   <img src="../assets/bmw.png" class="card-img-top" alt="..." />
                   <div class="card-body">
                     <h5 class="card-title-center">BMW</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">BMW</a>
+                    <p class="card-text">Detail</p>
+                    <p class="card-text">Price</p>
+                    <a href="#" class="btn btn-primary">ดู</a>
                   </div>
                 </div>
               </div>
@@ -115,8 +117,9 @@
                   />
                   <div class="card-body">
                     <h5 class="card-title-center">Benz</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Benz</a>
+                    <p class="card-text">Detail</p>
+                    <p class="card-text">Price</p>
+                    <a href="#" class="btn btn-primary">ดู</a>
                   </div>
                 </div>
               </div>
@@ -125,8 +128,9 @@
                   <img src="../assets/c.png" class="card-img-top" alt="..." />
                   <div class="card-body">
                     <h5 class="card-title-center">Chevrolet</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Chevrolet</a>
+                    <p class="card-text">Detail</p>
+                    <p class="card-text">Price</p>
+                    <a href="#" class="btn btn-primary">ดู</a>
                   </div>
                 </div>
               </div>
