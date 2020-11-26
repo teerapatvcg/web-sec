@@ -115,6 +115,12 @@ const routes = [
     name: 'show_car',
     component: () => import( '../views/show_car.vue')
   }
+  ,
+  {
+    path: '/show_allcar',
+    name: 'show_allcar',
+    component: () => import( '../views/show_allcar.vue')
+  }
 ]
 
 const router = new VueRouter({

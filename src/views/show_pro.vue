@@ -6,48 +6,22 @@
           <div class="card-header"></div>
           <div class="card-body">
           <div class="alert alert-danger" role="alert">รถจัด Promotion</div>
-            <div class="row">
-              <div class="col-3">
+            <div class="row" >
+            <div class="col-3" v-for="i in datas">
                 <div class="card mx-auto text-center" style="width: 18rem">
-                  <img src="../assets/mit.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title-center">Mitsubishi</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Mitsubishi</a>
+                  <div id="img_container">
+                    <img
+                      :src="i.Pic1"
+                      class="img-thumbnail rounded  mx-auto"
+                      height="180px"
+                    />
                   </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mx-auto" style="width: 18rem">
-                  <img src="../assets/bmw.png" class="card-img-top" alt="..." />
                   <div class="card-body">
-                    <h5 class="card-title-center">BMW</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">BMW</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mx-auto" style="width: 18rem">
-                  <img
-                    src="../assets/benz.png"
-                    class="card-img-top"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title-center">Benz</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Benz</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mx-auto" style="width: 18rem">
-                  <img src="../assets/c.png" class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <h5 class="card-title-center">Chevrolet</h5>
-                    <p class="card-text"></p>
-                    <a href="#" class="btn btn-primary">Chevrolet</a>
+                    <h5 class="card-title-center">{{i.Year}} Honda {{i.Model}}</h5>
+                    <p class="card-text"> รายละเอียดรุ่น {{i.Detailcar}}</p>
+                    <p class="card-text">ราคา : {{i.Price}}</p>
+                    <p class="card-text">ลดราคา : {{i.Promotion}}</p>
+                    <a href="#" class="btn btn-primary">ดูรายละเอียด</a>
                   </div>
                 </div>
               </div>
@@ -66,6 +40,28 @@
 <script>
 import Menu from "@/components/Menu";
 export default {
+  data() {
+    return {
+      datas: [],
+    };
+  },
+  async mounted() {
+    const axios = require("axios");
+    await axios
+      .get("http://localhost:80/selectpro.php")
+      .then((response) => {
+        response.data.forEach((element) => {
+          
+          console.log(element);
+          this.datas.push(element);
+        });
+      })
+      .catch(function(error) {
+        // handle error
+        console.log(error);
+      });
+      
+  },
   methods: {
     ci_home() {
       window.location.href = "/main";

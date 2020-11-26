@@ -102,7 +102,7 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-          <form action="">
+          
             <ul
               class="nav nav-pills nav-sidebar flex-column"
               data-widget="treeview"
@@ -115,7 +115,8 @@
                 >
                 <select
                   class="form-control"
-                  id="exampleFormControlSelect1"
+                  id="model"
+                  name="Model"
                   placeholder="name@example.com"
                 >
                   <option style="color: blue" value="" selected>-</option>
@@ -160,9 +161,8 @@
               </div>
               <br>
               <button
-                type="submit"
                 class="btn btn-warning"
-                @click="ci_promotion"
+                @click="seach"
               >
                 ค้นหา
               </button>
@@ -174,7 +174,7 @@
               <br>
               <br>
             </ul>
-          </form>
+          
           
         </nav>
         <!-- /.sidebar-menu -->
@@ -225,6 +225,11 @@ export default {
     ci_promotion() {
       window.location.href = "/show_pro";
     },
+    seach(){
+      localStorage.setItem("model",document.querySelector("select[name=Model]").value);
+      console.log(document.querySelector("select[name=Model]").value);
+       window.location.href = "/show_allcar";
+    }
   },
   components: { Menu },
 };

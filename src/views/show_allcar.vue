@@ -5,10 +5,10 @@
         <div class="card text-center">
           <div class="card-header"></div>
           <div class="card-body">
-          <div class="alert alert-danger" role="alert">รถจัด Promotion</div>
-            <div class="row" v-for="i in datas">
-            <div class="col-3" >
-                <div class="card mx-auto text-center" style="width: 18rem" >
+          <div class="alert alert-primary" role="alert">รถจัด Promotion</div>
+            <div class="row" >
+            <div class="col-3" v-for="i in datas">
+                <div class="card mx-auto text-center" style="width: 18rem">
                   <div id="img_container">
                     <img
                       :src="i.Pic1"
@@ -16,7 +16,7 @@
                       height="180px"
                     />
                   </div>
-                  <div class="card-body" >
+                  <div class="card-body">
                     <h5 class="card-title-center">{{i.Year}} Honda {{i.Model}}</h5>
                     <p class="card-text"> รายละเอียดรุ่น {{i.Detailcar}}</p>
                     <p class="card-text">ราคา : {{i.Price}}</p>
@@ -49,12 +49,13 @@ export default {
     const axios = require("axios");
     var data = new FormData();
     data.append("model",localStorage.getItem("model"));
-    await axios.post("http://localhost:80/select_seach.php")
+    await axios
+      .post("http://localhost:80/select_seach.php",data)
       .then((response) => {
         response.data.forEach((element) => {
+          
           console.log(element);
           this.datas.push(element);
-
         });
       })
       .catch(function(error) {

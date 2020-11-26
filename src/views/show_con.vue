@@ -18,16 +18,16 @@
                           <div class="alert alert-success" role="alert">ID LINE</div>
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row" v-for="i in datas">
                         <div class="col-6 x">
-                          <label for="">0880054314</label>
+                          <label for="">{{i.tel}}</label>
                         </div>
                         <div class="col-6">
-                          <label for="" class="">@teebangkapi</label>
+                          <label for="" class="">{{i.line}}</label>
                         </div>
                       </div>
 
-                      <div class="row">
+                      <div class="row" >
                         <div class="col-6  mt-3">
                         <div class="alert alert-info" role="alert">E-mail</div>
                         </div>
@@ -35,12 +35,12 @@
                           <div class="alert alert-info" role="alert">ที่อยู่ร้าน</div>
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row" v-for="i in datas">
                         <div class="col-6">
-                          <label for="">tee@hotmail.com</label>
+                          <label for="">{{i.email}}</label>
                         </div>
                         <div class="col-6">
-                          <label for="">203/139 บ้านเซนซิริ ทุ่งสุขลา ศรีราชา ชลบุรี 20230</label>
+                          <label for="">{{i.address}}</label>
                         </div>
                       </div>
                     </form>
@@ -62,6 +62,26 @@
 <script>
 import Menu from'@/components/Menu'
 export default {
+   data() {
+    return {
+      datas: [],
+    };
+  },
+  async mounted() {
+    const axios = require("axios");
+    await axios
+      .get("http://localhost:80/selectcontact.php")
+      .then((response) => {
+        response.data.forEach((element) => {
+          // console.log(element.first_name);
+          this.datas.push(element);
+        });
+      })
+      .catch(function(error) {
+        // handle error
+        console.log(error);
+      });
+  },
   methods:{
     ci_home(){
       window.location.href = "/main";

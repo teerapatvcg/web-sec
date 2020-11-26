@@ -94,12 +94,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="i in 25">
-                        <td class="" tabindex="0">Webkit</td>
-                        <td>Safari 3.0</td>
-                        <td>OSX.4+</td>
-                        <td class="sorting_1">522.1</td>
-                        <td class="sorting_1">จัดโปร</td>
+                      <tr v-for="i in datas">
+                        <td class="" tabindex="0">{{i.id}}</td>
+                        <td>{{i.Model}}</td>
+                        <td>{{i.Register}}</td>
+                        <td class="sorting_1">{{i.Status}}</td>
+                        <td class="sorting_1">{{i.Promotion}}</td>
                         <td>
                           <button type="button" class="btn btn-warning">
                             แก้ไข
@@ -133,6 +133,11 @@
 import firebase from "firebase";
 import Menu from "@/components/Menu";
 export default {
+  data() {
+    return {
+      datas: [],
+    };
+  },
   // beforeCreate() {
   //   firebase.auth().onAuthStateChanged((user) => {
   //     if (!user) {
@@ -143,6 +148,27 @@ export default {
   //     }
   //   });
   // },
+  async mounted() {
+    const axios = require("axios");
+    await axios
+      .get("http://localhost:80/selectedit.php")
+      .then((response) => {
+        response.data.forEach((element) => {
+          // console.log(element.first_name);
+          this.datas.push(element);
+        });
+      })
+      .catch(function(error) {
+        // handle error
+        console.log(error);
+      });
+      $(function() {
+      $("#example1").DataTable({
+        responsive: true,
+        autoWidth: false,
+      });
+    });
+  },
   methods: {
     ci_home() {
       window.location.href = "/main";
@@ -155,13 +181,9 @@ export default {
     },
   },
   components: { Menu },
+  
 };
-$(function() {
-  $("#example1").DataTable({
-    responsive: true,
-    autoWidth: false,
-  });
-});
+
 </script>
 
 <style></style>

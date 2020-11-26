@@ -57,7 +57,7 @@
                   <select
                     name="Year"
                     class="form-control manu mx-auto y"
-                    id="exampleFormControlSelect1"
+                    id="Year"
                     required
                   >
                     <option value="" disabled selected>-</option>
@@ -172,7 +172,7 @@
                     name="Detailcar"
                     type="text"
                     class="form-control manu mx-auto x"
-                    id="exampleInputEmail1"
+                    id="Detailcar"
                     required
                   />
                 </div>
@@ -183,7 +183,7 @@
                     name="CC"
                     type="number"
                     class="form-control manu mx-auto y"
-                    id="exampleInputEmail1"
+                    id="CC"
                     required
                   />
                 </div>
@@ -203,7 +203,7 @@
                   <select
                     name="Gear"
                     class="form-control manu mx-auto x"
-                    id="exampleFormControlSelect1"
+                    id="Gear"
                     required
                   >
                     <option value="" disabled selected>-</option>
@@ -217,7 +217,7 @@
                   <select
                     name="seats"
                     class="form-control manu mx-auto y"
-                    id="exampleFormControlSelect1"
+                    id="seats"
                     required
                   >
                     <option value="" disabled selected>-</option>
@@ -243,7 +243,7 @@
                     name="Mileage"
                     type="number"
                     class="form-control manu mx-auto x"
-                    id="exampleInputEmail1"
+                    id="Mileage"
                     required
                   />
                 </div>
@@ -253,7 +253,7 @@
                   <select
                     name="Color"
                     class="form-control manu mx-auto y"
-                    id="exampleFormControlSelect1"
+                    id="Color"
                     required
                   >
                     <option value="" disabled selected>-</option>
@@ -288,7 +288,7 @@
                     name="Register"
                     type="text"
                     class="form-control manu mx-auto x"
-                    id="exampleInputEmail1"
+                    id="Register"
                     required
                   />
                 </div>
@@ -298,7 +298,7 @@
                   <select
                     name="Province"
                     class="form-control manu mx-auto y"
-                    id="exampleFormControlSelect1"
+                    id="Province"
                     required
                   >
                     <option value="" disabled selected>-</option>
@@ -399,7 +399,7 @@
                     name="Price"
                     type="text"
                     class="form-control manu mx-auto x"
-                    id="exampleInputEmail1"
+                    id="Price"
                     required
                   />
                 </div>
@@ -410,7 +410,7 @@
                     name="Promotion"
                     type="number"
                     class="form-control manu mx-auto y"
-                    id="exampleInputEmail1"
+                    id="Promotion"
                   />
                 </div>
               </div>
@@ -427,7 +427,7 @@
                     required
                     name="Status"
                     class="form-control manu mx-auto y"
-                    id="exampleFormControlSelect1"
+                    id="Status"
                   >
                     <option value="1">อยู่</option>
                     <option value="2">ขายแล้ว</option>
@@ -446,7 +446,7 @@
                   <textarea
                     name="Detail"
                     class="form-control te"
-                    id="exampleFormControlTextarea1"
+                    id="Detail"
                     cols="40"
                     required
                   ></textarea>
@@ -494,7 +494,12 @@ export default {
   },
   methods: {
     async test() {
-      var storageRef = firebase.storage().ref("img");
+      if(document.getElementById("Model").value == "" ||document.getElementById("Year").value == "" ||document.getElementById("Detailcar").value == "" ||document.getElementById("CC").value == "" ||document.getElementById("Gear").value == "" ||document.getElementById("seats").value == "" ||document.getElementById("Mileage").value == "" ||document.getElementById("Color").value == "" ||document.getElementById("Register").value == "" ||document.getElementById("Province").value == "" ||document.getElementById("Price").value == "" ||document.getElementById("Status").value == "")
+      {
+        swal("Good job!", "You clicked the button!", "error");
+      }
+      else{
+        var storageRef = firebase.storage().ref("img");
       // Get the file from DOM
       var file = document.getElementById("files").files[0];
       var file1 = document.getElementById("files").files[1];
@@ -622,7 +627,10 @@ export default {
           .then((response) => {
             console.log(response.data);
             console.log(count);
+            swal("Good job!", "You clicked the button!", "success");
           });
+      }
+      
     },
   },
 
