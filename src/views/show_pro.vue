@@ -21,7 +21,7 @@
                     <p class="card-text"> รายละเอียดรุ่น {{i.Detailcar}}</p>
                     <p class="card-text">ราคา : {{i.Price}}</p>
                     <p class="card-text">ลดราคา : {{i.Promotion}}</p>
-                    <a href="#" class="btn btn-primary">ดูรายละเอียด</a>
+                    <a href="#" class="btn btn-primary" @click="detail(i.id)">ดูรายละเอียด</a>
                   </div>
                 </div>
               </div>
@@ -72,6 +72,10 @@ export default {
     ci_promotion() {
       window.location.href = "/main";
     },
+    detail(id_car){
+      localStorage.setItem("detaill",id_car);
+       window.location.href = "/show_car";
+    }
   },
   components: { Menu },
 };

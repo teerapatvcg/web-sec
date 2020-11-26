@@ -4,14 +4,14 @@
     <div class="wrapper">
       <div class="content-wrapper">
         <div class="card text-center">
-          <div class="card-header"></div>
+          <div class="card-header" v-for="i in datas"><h3>{{i.Year}} Honda {{i.Model}}</h3></div>
           <div class="card-body">
-            <div class="row">
+            <div class="row" v-for="i in datas">
               <div class="col-7">
                 <br /><br />
                 <div class="card mx-auto" style="height=200px;width: 800px;">
                   <div class="row">
-                    <div class="col-12 mx-auto  mt-5 mb-5">
+                    <div class="col-12 mx-auto mb-5">
                       <div
                         id="carouselExampleIndicators"
                         class="carousel slide"
@@ -35,29 +35,29 @@
                         <div class="carousel-inner">
                           <div class="carousel-item active">
                             <img
-                              src="../assets/1.jpg"
+                              :src="i.Pic1"
                               class="d-block w-100"
                               alt="..."
-                              wight="150px"
-                              height="300px"
+                             wight="325px"
+                              height="470px"
                             />
                           </div>
                           <div class="carousel-item">
                             <img
-                              src="../assets/2.jpg"
+                              :src="i.Pic2"
                               class="d-block w-100"
                               alt="..."
-                              wight="150px"
-                              height="300px"
+                             wight="325px"
+                              height="470px"
                             />
                           </div>
                           <div class="carousel-item">
                             <img
-                              src="../assets/3.jpg"
+                              :src="i.Pic3"
                               class="d-block w-100"
                               alt="..."
-                              wight="150px"
-                              height="300px"
+                              wight="325px"
+                              height="470px"
                             />
                           </div>
                         </div>
@@ -90,22 +90,22 @@
                   </div>
                 </div>
                 <div class="card mx-auto" style="height=200px;width: 800px;">
-                  <div class="row">
-                    <div class="col-6 mx-auto">
-                      <div class="alert alert-primary " role="alert">
-                        เบอร์โทรศัพท์
+                  <div class="row  alert alert-info">
+                    <div class="col-6 mx-auto " >
+                      <div class="" role="alert">
+                        รายละเอียด
                       </div>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="row" v-for="i in datas">
                     <div class="col-6 mx-auto">
-                      <label for="">0880054314</label>
+                      <label for="">{{i.Detail}}</label>
                     </div>
                   </div>
                   <br>
                 </div>
               </div>
-              <div class="col-5">
+              <div class="col-5" v-for="i in datas">
                 <div class="card mx-auto" style="width: 60%;">
                   <div class="card-body">
                     <div class="row">
@@ -113,126 +113,125 @@
                         <form action="#">
                           <div class="row">
                             <div class="col-6 ">
-                              <div class="alert alert-primary" role="alert">
-                                เบอร์โทรศัพท์
+                              <div class="alert alert-info " role="alert">
+                                รุ่น
                               </div>
                             </div>
                             <div class="col-6 ">
-                              <div class="alert alert-success" role="alert">
-                                ID LINE
+                              <div class="alert alert-info " role="alert">
+                                ปี
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6 x">
-                              <label for="">0880054314</label>
+                              <label for="">{{i.Model}}</label>
                             </div>
                             <div class="col-6">
-                              <label for="" class="">@teebangkapi</label>
+                              <label for="" class="">{{i.Year}}</label>
                             </div>
                           </div>
 
                           <div class="row">
                             <div class="col-6  mt-3">
                               <div class="alert alert-info" role="alert">
-                                E-mail
+                                รายละเอียดรุ่น
                               </div>
                             </div>
                             <div class="col-6  mt-3">
                               <div class="alert alert-info" role="alert">
-                                ที่อยู่ร้าน
+                                ขนาดเครื่องยนต์
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6">
-                              <label for="">tee@hotmail.com</label>
+                              <label for="">{{i.Detailcar}}</label>
                             </div>
                             <div class="col-6">
                               <label for=""
-                                >203/139 บ้านเซนซิริ ทุ่งสุขลา ศรีราชา ชลบุรี
-                                20230</label
+                                >{{i.CC}}</label
                               >
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6 ">
-                              <div class="alert alert-primary" role="alert">
-                                เบอร์โทรศัพท์
+                              <div class="alert alert-info " role="alert">
+                                ระบบเกียร์
                               </div>
                             </div>
                             <div class="col-6 ">
-                              <div class="alert alert-success" role="alert">
-                                ID LINE
+                              <div class="alert alert-info " role="alert">
+                                จำนวนที่นั่ง
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6 x">
-                              <label for="">0880054314</label>
+                              <label for="">{{i.Gear}}</label>
                             </div>
                             <div class="col-6">
-                              <label for="" class="">@teebangkapi</label>
+                              <label for="" class="">{{i.Seats}}</label>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6 ">
-                              <div class="alert alert-primary" role="alert">
-                                เบอร์โทรศัพท์
+                              <div class="alert alert-info " role="alert">
+                                เลขไมล์ (กม.)
                               </div>
                             </div>
                             <div class="col-6 ">
-                              <div class="alert alert-success" role="alert">
-                                ID LINE
+                              <div class="alert alert-info " role="alert">
+                                สี
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6 x">
-                              <label for="">0880054314</label>
+                              <label for="">{{i.Mileage}}</label>
                             </div>
                             <div class="col-6">
-                              <label for="" class="">@teebangkapi</label>
+                              <label for="" class="">{{i.Color}}</label>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6 ">
-                              <div class="alert alert-primary" role="alert">
-                                เบอร์โทรศัพท์
+                              <div class="alert alert-info " role="alert">
+                                ทะเบียน
                               </div>
                             </div>
                             <div class="col-6 ">
-                              <div class="alert alert-success" role="alert">
-                                ID LINE
+                              <div class="alert alert-info " role="alert">
+                                จังหวัด
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6 x">
-                              <label for="">0880054314</label>
+                              <label for="">{{i.Register}}</label>
                             </div>
                             <div class="col-6">
-                              <label for="" class="">@teebangkapi</label>
+                              <label for="" class="">{{i.Province}}</label>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6 ">
-                              <div class="alert alert-primary" role="alert">
-                                เบอร์โทรศัพท์
+                              <div class="alert alert-success " role="alert">
+                                ราคา
                               </div>
                             </div>
                             <div class="col-6 ">
-                              <div class="alert alert-success" role="alert">
-                                ID LINE
+                              <div class="alert alert-danger " role="alert">
+                                Promotion
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-6 x">
-                              <label for="">0880054314</label>
+                              <label for="">{{i.Price}}</label>
                             </div>
                             <div class="col-6">
-                              <label for="" class="">@teebangkapi</label>
+                              <label for="" class="">{{i.Promotion}}</label>
                             </div>
                           </div>
                         </form>
@@ -256,16 +255,31 @@
 <script>
 import Menu from "@/components/Menu";
 export default {
-  methods: {
-    ci_home() {
-      window.location.href = "/main";
-    },
-    ci_contact() {
-      window.location.href = "/main";
-    },
-    ci_promotion() {
-      window.location.href = "/main";
-    },
+  data() {
+    return {
+      datas: [],
+    };
+  },
+  async mounted() {
+    const axios = require("axios");
+    var data = new FormData();
+    console.log(localStorage.getItem("detaill"));
+    data.append("id_car",localStorage.getItem("detaill"));
+    await axios
+      .post("http://localhost:80/select_car.php",data)
+      .then((response) => {
+        response.data.forEach((element) => {
+          console.log(element);
+          this.datas.push(element);
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    
+    
+    
+      
   },
   components: { Menu },
 };

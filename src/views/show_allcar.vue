@@ -21,7 +21,7 @@
                     <p class="card-text"> รายละเอียดรุ่น {{i.Detailcar}}</p>
                     <p class="card-text">ราคา : {{i.Price}}</p>
                     <p class="card-text">ลดราคา : {{i.Promotion}}</p>
-                    <a href="#" class="btn btn-primary">ดูรายละเอียด</a>
+                    <a href="#" class="btn btn-primary" @click="detail(i.id)">ดูรายละเอียด</a>
                   </div>
                 </div>
               </div>
@@ -48,7 +48,40 @@ export default {
   async mounted() {
     const axios = require("axios");
     var data = new FormData();
-    data.append("model",localStorage.getItem("model"));
+    if(localStorage.getItem("model")==0 && localStorage.getItem("price")==1000000000)
+    {
+      await axios
+      .post("http://localhost:80/select_seach_all.php")
+      .then((response) => {
+        response.data.forEach((element) => {
+          
+          console.log(element);
+          this.datas.push(element);
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    }
+    else if(localStorage.getItem("model")==0 && localStorage.getItem("price")!=1000000000)
+    {
+      data.append("price",localStorage.getItem("price"));
+      await axios
+      .post("http://localhost:80/select_seach_price.php",data)
+      .then((response) => {
+        response.data.forEach((element) => {
+          
+          console.log(element);
+          this.datas.push(element);
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    }
+    else{
+      data.append("model",localStorage.getItem("model"));
+    data.append("price",localStorage.getItem("price"));
     await axios
       .post("http://localhost:80/select_seach.php",data)
       .then((response) => {
@@ -59,9 +92,10 @@ export default {
         });
       })
       .catch(function(error) {
-        // handle error
         console.log(error);
       });
+    }
+    
       
   },
   methods: {
@@ -74,6 +108,10 @@ export default {
     ci_promotion() {
       window.location.href = "/main";
     },
+    detail(id_car){
+      localStorage.setItem("detaill",id_car);
+       window.location.href = "/show_car";
+    }
   },
   components: { Menu },
 };

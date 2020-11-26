@@ -49,7 +49,8 @@ export default {
     const axios = require("axios");
     var data = new FormData();
     data.append("model",localStorage.getItem("model"));
-    await axios.post("http://localhost:80/select_seach.php")
+    data.append("price",localStorage.getItem("price"));
+    await axios.post("http://localhost:80/select_seach.php",data)
       .then((response) => {
         response.data.forEach((element) => {
           console.log(element);

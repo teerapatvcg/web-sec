@@ -4,8 +4,8 @@
       <Menu />
       <div class="content-wrapper">
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
+          <div class="card-header text-center">
+            <h3 class="card-title ">ตารางรถทั้งหมด</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -18,7 +18,7 @@
                     role="grid"
                     aria-describedby="example1_info"
                   >
-                    <thead class="bg-success">
+                    <thead class="bg-info">
                       <tr role="row">
                         <th
                           class="sorting"

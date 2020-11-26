@@ -18,9 +18,9 @@
               <div class="col-6 x">
                 <div class="form-group">
                   <select
-                    name="Model"
+                    name="Model1"
                     class="form-control manu mx-auto x"
-                    id="Model"
+                    id="Model1"
                     required
                   >
                     <option value="" disabled selected>-</option>
@@ -257,18 +257,19 @@
                     required
                   >
                     <option value="" disabled selected>-</option>
-                    <option value="Accord">ขาว</option>
-                    <option value="Airwave">แดง</option>
-                    <option value="Accord">ดำ</option>
-                    <option value="Airwave">น้ำเงิน</option>
-                    <option value="Accord">เขียว</option>
-                    <option value="Airwave">ม่วง</option>
-                    <option value="Accord">ชมพู</option>
-                    <option value="Airwave">ฟ้า</option>
-                    <option value="Accord">เหลือง</option>
-                    <option value="Airwave">บรอน</option>
-                    <option value="Accord">ทอง</option>
-                    <option value="Airwave">เทา</option>
+                    <option value="ขาว">ขาว</option>
+                    <option value="แดง">แดง</option>
+                    <option value="ดำ">ดำ</option>
+                    <option value="น้ำเงิน">น้ำเงิน</option>
+                    <option value="เขียว">เขียว</option>
+                    <option value="ม่วง">ม่วง</option>
+                    <option value="ชมพู">ชมพู</option>
+                    <option value="ฟ้า">ฟ้า</option>
+                    <option value="เหลือง">เหลือง</option>
+                    <option value="เงิน">เงิน</option>
+                    <option value="บรอน">บรอน</option>
+                    <option value="ทอง">ทอง</option>
+                    <option value="เทา">เทา</option>
                   </select>
                 </div>
               </div>
@@ -421,19 +422,22 @@
               </div>
             </div>
             <div class="row ">
-              <div class="col-12 offset-4 text-center mt-3 text-center">
+              <div class="col-12 offset-4 mt-3 mr-8" style="max-width:100%;">
                 <div class="form-group">
                   <select
                     required
                     name="Status"
                     class="form-control manu mx-auto y"
                     id="Status"
+                    
                   >
+                    <option value="" disabled selected>-</option>
                     <option value="1">อยู่</option>
                     <option value="2">ขายแล้ว</option>
                   </select>
                 </div>
               </div>
+              
             </div>
             <div class="row">
               <div class="col-12 text-right mt-3 text-center">
@@ -494,9 +498,9 @@ export default {
   },
   methods: {
     async test() {
-      if(document.getElementById("Model").value == "" ||document.getElementById("Year").value == "" ||document.getElementById("Detailcar").value == "" ||document.getElementById("CC").value == "" ||document.getElementById("Gear").value == "" ||document.getElementById("seats").value == "" ||document.getElementById("Mileage").value == "" ||document.getElementById("Color").value == "" ||document.getElementById("Register").value == "" ||document.getElementById("Province").value == "" ||document.getElementById("Price").value == "" ||document.getElementById("Status").value == "")
+      if(document.getElementById("Model1").value == "" ||document.getElementById("Year").value == "" ||document.getElementById("Detailcar").value == "" ||document.getElementById("CC").value == "" ||document.getElementById("Gear").value == "" ||document.getElementById("seats").value == "" ||document.getElementById("Mileage").value == "" ||document.getElementById("Color").value == "" ||document.getElementById("Register").value == "" ||document.getElementById("Province").value == "" ||document.getElementById("Price").value == "" ||document.getElementById("Status").value == "")
       {
-        swal("Good job!", "You clicked the button!", "error");
+        swal("กรุณาใส่ข้อมูลให้ครบ", "You clicked the button!", "error");
       }
       else{
         var storageRef = firebase.storage().ref("img");
@@ -575,7 +579,7 @@ export default {
       const axios = require("axios").default;
       var data = new FormData();
       var count = 0;
-      data.append("Model", document.querySelector("select[name=Model]").value);
+      data.append("Model1", document.querySelector("select[name=Model1]").value);
       data.append("Year", document.querySelector("select[name=Year]").value);
       data.append(
         "Detailcar",
@@ -627,7 +631,7 @@ export default {
           .then((response) => {
             console.log(response.data);
             console.log(count);
-            swal("Good job!", "You clicked the button!", "success");
+            swal("บันทึกสำเร็จ", "You clicked the button!", "success");
           });
       }
       
@@ -651,5 +655,8 @@ export default {
 .te {
   width: 100%;
   height: 500px;
+}
+.Status{
+  width: 5px;
 }
 </style>

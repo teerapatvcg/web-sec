@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav class="main-header navbar navbar-expand navbar-dark navbar-dark">
       <!-- Left navbar links -->
 
       <ul class="navbar-nav">
@@ -45,7 +45,7 @@
     </ul>
       
     </nav>
-    <aside class="main-sidebar elevation-4 text-left">
+    <aside class="main-sidebar elevation-4 text-left sidebar-dark-primary ">
       <!-- Brand Logo -->
       <a href="/main" class="brand-link">
         <img
@@ -54,21 +54,21 @@
           class="brand-image img-circle elevation-3"
           style="opacity: 0.8"
         />
-        <span class="brand-text font-weight-light">Honda Second</span>
+        <span class="brand-text font-weight-light mx-auto">Honda Second</span>
       </a>
 
       <!-- Sidebar -->
-      <div class="sidebar">
+      <div class="sidebar" >
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image" v-if="islogin">
-            <img
-              src="dist/img/user2-160x160.jpg"
-              class="img-circle elevation-2"
-              alt="User Image"
-            />
-          </div>
-          <div class="info" v-if="islogin">
+          <!-- <div class="image" v-if="islogin">
+          //   <img
+          //     src="dist/img/user2-160x160.jpg"
+          //     class="img-circle elevation-2"
+          //     alt="User Image"
+          //   />
+          // </div>-->
+          <div class="info mx-auto" v-if="islogin">
             <a href="#" class="d-block">Admin</a>
           </div>
         </div>
@@ -119,7 +119,7 @@
                   name="Model"
                   placeholder="name@example.com"
                 >
-                  <option style="color: blue" value="" selected>-</option>
+                  <option value=0 disabled selected>-</option>
                   <option value="Accord">Accord</option>
                   <option value="Airwave">Airwave</option>
                   <option value="BR-V">BR-V</option>
@@ -153,10 +153,17 @@
                 >
                 <select
                   class="form-control"
-                  id="exampleFormControlSelect1"
+                  id="price"
+                  name="price"
                   placeholder="name@example.com"
                 >
-                  <option style="color: blue" value="" selected>-</option>
+                  <option value=1000000000 disabled selected>-</option>
+                  <option value=100000>น้อยกว่า 100,000</option>
+                  <option value=300000>น้อยกว่า 300,000</option>
+                  <option value=500000>น้อยกว่า 500,000</option>
+                  <option value=700000>น้อยกว่า 700,000</option>
+                  <option value=1000000>น้อยกว่า 1,000,000</option>
+                 
                 </select>
               </div>
               <br>
@@ -227,7 +234,9 @@ export default {
     },
     seach(){
       localStorage.setItem("model",document.querySelector("select[name=Model]").value);
+      localStorage.setItem("price",document.querySelector("select[name=price]").value);
       console.log(document.querySelector("select[name=Model]").value);
+      console.log(document.querySelector("select[name=price]").value);
        window.location.href = "/show_allcar";
     }
   },

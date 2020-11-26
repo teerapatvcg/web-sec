@@ -8,7 +8,7 @@
           <div class="card-body ">
             <div class="card mx-auto" style="width: 50%;">
               <div class="card-body">
-                <div class="row">
+                <div class="row" >
                   <div class="col ">
                     <form action="#">
                       <div class="row">
@@ -21,24 +21,25 @@
                           <label for="exampleFormControlSelect1">ID LINE</label>
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row" >
                         <div class="col-6 x">
                           <div class="form-group">
                             <input
                               name="tel"
                               type="text"
                               class="form-control manu mx-auto x"
-                              id="exampleInputEmail1"
+                              id="tel"
                             />
+                            
                           </div>
                         </div>
                         <div class="col-6">
-                          <div class="form-group">
+                          <div class="form-group" >
                             <input
                               name="line"
                               type="text"
                               class="form-control manu mx-auto x"
-                              id="exampleInputEmail1"
+                              id="line"
                             />
                           </div>
                         </div>
@@ -59,7 +60,7 @@
                               name="email"
                               type="text"
                               class="form-control manu mx-auto x"
-                              id="exampleInputEmail1"
+                              id="email"
                             />
                           </div>
                         </div>
@@ -69,7 +70,7 @@
                               name="address"
                               type="text"
                               class="form-control manu mx-auto x"
-                              id="exampleInputEmail1"
+                              id="address"
                             />
                           </div>
                         </div>
@@ -112,6 +113,26 @@ export default {
       datas: [],
     };
   },
+  mounted(){
+    const axios = require("axios");
+    var data = new FormData();
+     axios
+      .post("http://localhost:80/select_contact_edit.php",data)
+      .then((response) => {
+        response.data.forEach((element) => {
+          
+          console.log(element);
+          this.datas.push(element);
+          document.getElementById("tel").value = element.tel;
+          document.getElementById("line").value = element.line;
+          document.getElementById("email").value = element.email;
+          document.getElementById("address").value = element.address;
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  },
   methods: {
     async test() {
       const axios = require("axios").default;
@@ -135,6 +156,8 @@ export default {
       axios.post("http://localhost:80/contact.php", data).then((response) => {
         console.log(response.data);
         console.log(count);
+        swal("บันทึกข้อมูลสำเร็จ", "You clicked the button!", "success");
+        
       });
     },
   },

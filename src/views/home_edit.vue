@@ -9,193 +9,21 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col ">
-                    <form action="#">
-                      <div class="row">
-                        <div class="col-6 text-right">
-                          <label for="exampleFormControlSelect1">รุ่นรถยอมนิยม คันที่ 1</label>
-                        </div>
-                        <div class="col-6 text-left">
-                          <label for="exampleFormControlSelect1">รุ่นรถยอมนิยม คันที่ 2</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-6 x">
-                          <div class="form-group">
-                            <select
-                              class="form-control manu mx-auto x"
-                              id="exampleFormControlSelect1"
-                            >
-                              <option style="color: blue" value="" selected
-                                >-</option
-                              >
-                              <option value="Accord">Accord</option>
-                              <option value="Airwave">Airwave</option>
-                              <option value="BR-V">BR-V</option>
-                              <option value="Brio">Brio</option>
-                              <option value="City">City</option>
-                              <option value="Civic">Civic</option>
-                              <option value="CR-V">CR-V</option>
-                              <option value="CR-X del Sol">CR-X del Sol</option>
-                              <option value="CR-Z">CR-Z</option>
-                              <option value="e">e</option>
-                              <option value="Freed">Freed</option>
-                              <option value="HR-V">HR-V</option>
-                              <option value="Integra">Integra</option>
-                              <option value="Jazz">Jazz</option>
-                              <option value="Legend">Legend</option>
-                              <option value="Mobilio">Mobilio</option>
-                              <option value="N-BOX">N-BOX</option>
-                              <option value="N-ONE">N-ONE</option>
-                              <option value="NSX">NSX</option>
-                              <option value="Odyssey">Odyssey</option>
-                              <option value="Prelude">Prelude</option>
-                              <option value="S2000">S2000</option>
-                              <option value="STEPWGN SPADA">STEPWGN SPADA</option>
-                              <option value="Stream">Stream</option>
-                              <option value="Today">Today</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-group">
-                            <select
-                              class="form-control manu mx-auto x"
-                              id="exampleFormControlSelect1"
-                            >
-                              <option style="color: blue" value="" selected
-                                >-</option
-                              >
-                              <option value="Accord">Accord</option>
-                              <option value="Airwave">Airwave</option>
-                              <option value="BR-V">BR-V</option>
-                              <option value="Brio">Brio</option>
-                              <option value="City">City</option>
-                              <option value="Civic">Civic</option>
-                              <option value="CR-V">CR-V</option>
-                              <option value="CR-X del Sol">CR-X del Sol</option>
-                              <option value="CR-Z">CR-Z</option>
-                              <option value="e">e</option>
-                              <option value="Freed">Freed</option>
-                              <option value="HR-V">HR-V</option>
-                              <option value="Integra">Integra</option>
-                              <option value="Jazz">Jazz</option>
-                              <option value="Legend">Legend</option>
-                              <option value="Mobilio">Mobilio</option>
-                              <option value="N-BOX">N-BOX</option>
-                              <option value="N-ONE">N-ONE</option>
-                              <option value="NSX">NSX</option>
-                              <option value="Odyssey">Odyssey</option>
-                              <option value="Prelude">Prelude</option>
-                              <option value="S2000">S2000</option>
-                              <option value="STEPWGN SPADA" >STEPWGN SPADA</option>
-                              <option value="Stream">Stream</option>
-                              <option value="Today">Today</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-6 text-right mt-3">
-                          <label for="exampleInputEmail1">รุ่นรถยอมนิยม คันที่ 3</label>
-                        </div>
-                        <div class="col-6 text-left mt-3">
-                          <label for="exampleInputEmail1">รุ่นรถยอมนิยม คันที่ 4</label
-                          >
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-6">
-                          <div class="form-group">
-                            <select
-                              class="form-control manu mx-auto x"
-                              id="exampleFormControlSelect1"
-                            >
-                              <option style="color: blue" value="" selected
-                                >-</option
-                              >
-                              <option value="Accord">Accord</option>
-                              <option value="Airwave">Airwave</option>
-                              <option value="BR-V">BR-V</option>
-                              <option value="Brio">Brio</option>
-                              <option value="City">City</option>
-                              <option value="Civic">Civic</option>
-                              <option value="CR-V">CR-V</option>
-                              <option value="CR-X del Sol">CR-X del Sol</option>
-                              <option value="CR-Z">CR-Z</option>
-                              <option value="e">e</option>
-                              <option value="Freed">Freed</option>
-                              <option value="HR-V">HR-V</option>
-                              <option value="Integra">Integra</option>
-                              <option value="Jazz">Jazz</option>
-                              <option value="Legend">Legend</option>
-                              <option value="Mobilio">Mobilio</option>
-                              <option value="N-BOX">N-BOX</option>
-                              <option value="N-ONE">N-ONE</option>
-                              <option value="NSX">NSX</option>
-                              <option value="Odyssey">Odyssey</option>
-                              <option value="Prelude">Prelude</option>
-                              <option value="S2000">S2000</option>
-                              <option value="STEPWGN SPADA" >STEPWGN SPADA</option>
-                              <option value="Stream">Stream</option>
-                              <option value="Today">Today</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-6">
-                          <div class="form-group">
-                            <select
-                              class="form-control manu mx-auto x"
-                              id="exampleFormControlSelect1"
-                            >
-                              <option style="color: blue" value="" selected
-                                >-</option
-                              >
-                              <option value="Accord">Accord</option>
-                              <option value="Airwave">Airwave</option>
-                              <option value="BR-V">BR-V</option>
-                              <option value="Brio">Brio</option>
-                              <option value="City">City</option>
-                              <option value="Civic">Civic</option>
-                              <option value="CR-V">CR-V</option>
-                              <option value="CR-X del Sol">CR-X del Sol</option>
-                              <option value="CR-Z">CR-Z</option>
-                              <option value="e">e</option>
-                              <option value="Freed">Freed</option>
-                              <option value="HR-V">HR-V</option>
-                              <option value="Integra">Integra</option>
-                              <option value="Jazz">Jazz</option>
-                              <option value="Legend">Legend</option>
-                              <option value="Mobilio">Mobilio</option>
-                              <option value="N-BOX">N-BOX</option>
-                              <option value="N-ONE">N-ONE</option>
-                              <option value="NSX">NSX</option>
-                              <option value="Odyssey">Odyssey</option>
-                              <option value="Prelude">Prelude</option>
-                              <option value="S2000">S2000</option>
-                              <option value="STEPWGN SPADA" >STEPWGN SPADA</option>
-                              <option value="Stream">Stream</option>
-                              <option value="Today">Today</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
                       <div class="row ">
                             <div class="col-4 offset-4 text-left mt-3 ">
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Example file image</label>
-                                <input type="file" multiple class="form-control-file" id="exampleFormControlFile1">
+                                <input type="file" id="files" name="files[]" multiple />
                             </div>
                             </div>
                         </div>
                       <div class="row ">
                             <div class="col-6 offset-3 text-center mt-3 ">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success">Success</button>
+                                <button type="submit" class="btn btn-success" @click="test">Success</button>
                             </div>
                             </div>
                         </div>
-                    </form>
                   </div>
                 </div>
               </div>
@@ -213,16 +41,103 @@
 
 <script>
 import Menu from "@/components/Menu";
+import firebase from "firebase";
+import swal from "sweetalert";
 export default {
+  data() {
+    return {
+      serial: "",
+      datas: [],
+    };
+  },
   methods: {
-    ci_home() {
-      window.location.href = "/main";
-    },
-    ci_contact() {
-      window.location.href = "/main";
-    },
-    ci_promotion() {
-      window.location.href = "/main";
+    async test() {
+      var storageRef = firebase.storage().ref("img");
+      // Get the file from DOM
+      var file = document.getElementById("files").files[0];
+      var file1 = document.getElementById("files").files[1];
+      var file2 = document.getElementById("files").files[2];
+      console.log(file.name);
+      console.log(file1.name);
+      console.log(file2.name);
+      // console.log(file2.name);
+      //dynamically s1et reference to the file name
+      var thisRef = storageRef.child(file.name);
+      //put request upload file to firebase storage
+      await thisRef.put(file).then((snapshot) => {
+        // swal("Good job!", "You clicked the button!", "success");
+        console.log("Uploaded a blob or file!");
+      });
+       thisRef = storageRef.child(file1.name);
+      //put request upload file to firebase storage
+      await thisRef.put(file1).then((snapshot) => {
+        // swal("Good job!", "You clicked the button!", "success");
+        console.log("Uploaded a blob or file!");
+      });
+       thisRef = storageRef.child(file2.name);
+      //put request upload file to firebase storage
+      await thisRef.put(file2).then((snapshot) => {
+        // swal("Good job!", "You clicked the button!", "success");
+        console.log("Uploaded a blob or file!");
+      });
+      const storage = firebase.storage();
+      // let linkimg = "";
+      // Get metadata properties
+      let linkimg;
+      let self = this;
+      await storage
+        .ref("img")
+        .child(file.name)
+        .getDownloadURL()
+        .then((url) => {
+          // console.log(typeof url);
+          // console.log(url);
+          self.linkimg = url;
+          self.datas.push(url);
+
+          storage
+            .ref("img")
+            .child(file1.name)
+            .getDownloadURL()
+            .then((url) => {
+              // console.log(typeof url);
+              // console.log(url);
+              self.linkimg = url;
+              self.datas.push(url);
+
+              storage
+                .ref("img")
+                .child(file2.name)
+                .getDownloadURL()
+                .then((url) => {
+                  // console.log(typeof url);
+                  // console.log(url);
+                  self.linkimg = url;
+                  self.datas.push(url);
+                });
+            });
+        });
+
+      const axios = require("axios").default;
+      var data = new FormData();
+      var count = 0;
+      data.append("Pic1", self.datas[0]);
+      data.append("Pic2", self.datas[1]);
+      data.append("Pic3", self.datas[2]);
+      console.log(data);
+      if (1) {
+        data.forEach((element) => {
+          console.log(element);
+          console.log(count);
+          count++;
+        });
+      }
+      axios.post("http://localhost:80/home_edit.php", data).then((response) => {
+        console.log(response.data);
+        console.log(count);
+        swal("บันทึกข้อมูลสำเร็จ", "You clicked the button!", "success");
+        
+      });
     },
   },
   components: { Menu },
