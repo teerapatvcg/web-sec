@@ -79,12 +79,6 @@ const routes = [
   }
   ,
   {
-    path: '/promo_edit',
-    name: 'promo_edit',
-    component: () => import( '../views/promo_edit.vue')
-  }
-  ,
-  {
     path: '/home_edit',
     name: 'home_edit',
     beforeEnter: check,
@@ -120,6 +114,13 @@ const routes = [
     path: '/show_allcar',
     name: 'show_allcar',
     component: () => import( '../views/show_allcar.vue')
+  }
+  ,
+  {
+    path: '/edit_img',
+    name: 'edit_img',
+    beforeEnter: check,
+    component: () => import( '../views/edit_img.vue')
   }
 ]
 

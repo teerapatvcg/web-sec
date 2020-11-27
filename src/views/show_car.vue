@@ -4,7 +4,7 @@
     <div class="wrapper">
       <div class="content-wrapper">
         <div class="card text-center">
-          <div class="card-header" v-for="i in datas"><h3>{{i.Year}} Honda {{i.Model}}</h3></div>
+          <div class="card-header" v-for="i in datas"><h4>{{i.Year}} Honda {{i.Model}}</h4></div>
           <div class="card-body">
             <div class="row" v-for="i in datas">
               <div class="col-7">
@@ -150,7 +150,7 @@
                             </div>
                             <div class="col-6">
                               <label for=""
-                                >{{i.CC}}</label
+                                >{{i.CC}} CC</label
                               >
                             </div>
                           </div>
@@ -232,6 +232,12 @@
                             </div>
                             <div class="col-6">
                               <label for="" class="">{{i.Promotion}}</label>
+                            </div>
+                            <div class="col-12 ">
+                              <div class="alert alert-warning " role="alert">
+                                สถานะ  {{i.Status}}
+                              </div>
+                              
                             </div>
                           </div>
                         </form>

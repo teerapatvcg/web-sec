@@ -99,15 +99,6 @@ export default {
       
   },
   methods: {
-    ci_home() {
-      window.location.href = "/main";
-    },
-    ci_contact() {
-      window.location.href = "/main";
-    },
-    ci_promotion() {
-      window.location.href = "/main";
-    },
     detail(id_car){
       localStorage.setItem("detaill",id_car);
        window.location.href = "/show_car";

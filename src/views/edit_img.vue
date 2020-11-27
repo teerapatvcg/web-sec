@@ -1,5 +1,6 @@
 <template>
-  <div><Menu />
+  <div>
+    <Menu />
     <div class="wrapper">
       <div class="content-wrapper">
         <div class="card text-center">
@@ -9,21 +10,34 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col ">
-                      <div class="row ">
-                            <div class="col-4 offset-4 text-left mt-3 ">
-                            <div class="form-group">
-                                <label for="exampleFormControlFile1">Example file image</label>
-                                <input type="file" id="files" name="files[]" multiple />
-                            </div>
-                            </div>
+                    <div class="row ">
+                      <div class="col-4 offset-4 text-left mt-3 ">
+                        <div class="form-group">
+                          <label for="exampleFormControlFile1"
+                            >เพิ่ม/แก้ไขรูป</label
+                          >
+                          <input
+                            type="file"
+                            id="files"
+                            name="files[]"
+                            multiple
+                          />
                         </div>
-                      <div class="row ">
-                            <div class="col-6 offset-3 text-center mt-3 ">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-success" @click="test">Success</button>
-                            </div>
-                            </div>
+                      </div>
+                    </div>
+                    <div class="row ">
+                      <div class="col-6 offset-3 text-center mt-3 ">
+                        <div class="form-group">
+                          <button
+                            type="submit"
+                            class="btn btn-success"
+                            @click="test"
+                          >
+                            Success
+                          </button>
                         </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -51,7 +65,6 @@ export default {
     };
   },
   methods: {
-
     async test() {
       const axios = require("axios").default;
       var storageRef = firebase.storage().ref("img");
@@ -70,13 +83,13 @@ export default {
         // swal("Good job!", "You clicked the button!", "success");
         console.log("Uploaded a blob or file!");
       });
-       thisRef = storageRef.child(file1.name);
+      thisRef = storageRef.child(file1.name);
       //put request upload file to firebase storage
       await thisRef.put(file1).then((snapshot) => {
         // swal("Good job!", "You clicked the button!", "success");
         console.log("Uploaded a blob or file!");
       });
-       thisRef = storageRef.child(file2.name);
+      thisRef = storageRef.child(file2.name);
       //put request upload file to firebase storage
       await thisRef.put(file2).then((snapshot) => {
         // swal("Good job!", "You clicked the button!", "success");
@@ -116,12 +129,15 @@ export default {
                   // console.log(url);
                   self.linkimg = url;
                   self.datas.push(url);
-                  
+
                   var data = new FormData();
                   var count = 0;
+                  console.log(localStorage.getItem("id_car_img"));
+                  data.append("id_car_img", localStorage.getItem("id_car_img"));
                   data.append("Pic1", self.datas[0]);
                   data.append("Pic2", self.datas[1]);
                   data.append("Pic3", self.datas[2]);
+
                   console.log(data);
                   if (1) {
                     data.forEach((element) => {
@@ -129,21 +145,24 @@ export default {
                       console.log(count);
                     });
                   }
-                  axios.post("http://localhost:80/home_edit.php", data).then((response) => {
-                    console.log(response.data);
-                    console.log(count);
-                    swal("บันทึกสำเร็จ", "You clicked the button!", "success");
-                    
-                  });
+                  axios
+                    .post("http://localhost:80/edit_img.php", data)
+                    .then((response) => {
+                      console.log(response.data);
+                      console.log(count);
+                      swal("แก้ไขรูปสำเร็จ", {
+                                  icon:"success",
+                                  buttons: false,
+                                  timer: 1800,
+                                });
+                            setTimeout(() => {
+                          window.location.href = "/edit";
+                        }, 2000);
+                    });
                 });
             });
         });
-
-      
-
-      
     },
-    
   },
   components: { Menu },
 };

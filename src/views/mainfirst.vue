@@ -7,7 +7,7 @@
           <div class="card-header"></div>
           <div class="card-body">
             <div class="row" v-for="i in datas">
-              <div class="col-8 mx-auto mb-1 ">
+              <div class="col-10 mx-auto mb-1 ">
                 <div
                   id="carouselExampleIndicators"
                   class="carousel slide"
@@ -84,7 +84,7 @@
                 </div>
               </div>
             </div>
-            <h5 class="alert alert-danger">รถ Promotion</h5>
+            <h5 class="alert alert-info tee">รถ Promotion</h5>
             <div class="row" >
             <div class="col-3" v-for="i in datass">
                 <div class="card mx-auto text-center " style="width: 15rem">
@@ -126,6 +126,7 @@ export default {
       serial: "",
       datas: [],
       datass: [],
+      count_datass:0
     };
   },
   async mounted() {
@@ -145,12 +146,12 @@ export default {
         console.log(error);
       });
       await axios
-      .get("http://localhost:80/selectpro.php")
+      .get("http://localhost:80/selectpromain.php")
       .then((response) => {
         response.data.forEach((element) => {
-          
           console.log(element);
           this.datass.push(element);
+          this.count_datass += 1;
         });
       })
       .catch(function(error) {
@@ -168,4 +169,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

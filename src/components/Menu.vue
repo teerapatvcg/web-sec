@@ -47,33 +47,26 @@
     </nav>
     <aside class="main-sidebar elevation-4 text-left sidebar-dark-primary ">
       <!-- Brand Logo -->
-      <a href="/main" class="brand-link">
+      <a href="/main" class="brand-link ">
         <img
-          src="dist/img/AdminLTELogo.png"
+          src="../assets/tf2car2.png"
           alt="AdminLTE Logo"
-          class="brand-image img-circle elevation-3"
           style="opacity: 0.8"
+          class="ml-4"
         />
-        <span class="brand-text font-weight-light mx-auto">Honda Second</span>
-      </a>
+      </a> 
 
       <!-- Sidebar -->
       <div class="sidebar" >
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <!-- <div class="image" v-if="islogin">
-          //   <img
-          //     src="dist/img/user2-160x160.jpg"
-          //     class="img-circle elevation-2"
-          //     alt="User Image"
-          //   />
-          // </div>-->
-          <div class="info mx-auto" v-if="islogin">
+        <div class="user-panel mt-3 pb-3 d-flex" v-if="islogin">
+          <div class="info mx-auto" >
             <a href="#" class="d-block">Admin</a>
           </div>
         </div>
         <div class="row">
           <div class="col text-center">
+          <br>
             <button type="button" class="btn btn-primary butt" @click="ci_home">
               Home
             </button>
@@ -110,7 +103,7 @@
               data-accordion="false"
             >
               <div class="form-group ml-3 mr-3 text-center">
-                <label for="exampleFormControlSelect1" style="color: black"
+                <label for="exampleFormControlSelect1" style="color: white"
                   >รุ่น</label
                 >
                 <select
@@ -148,7 +141,7 @@
                 </select>
               </div>
               <div class="form-group ml-3 mr-3 text-center">
-                <label for="exampleFormControlSelect1" style="color:  black"
+                <label for="exampleFormControlSelect1" style="color:  white"
                   >ราคา</label
                 >
                 <select

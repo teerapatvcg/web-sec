@@ -429,15 +429,13 @@
                     name="Status"
                     class="form-control manu mx-auto y"
                     id="Status"
-                    
                   >
                     <option value="" disabled selected>-</option>
-                    <option value="1">อยู่</option>
-                    <option value="2">ขายแล้ว</option>
+                    <option value="อยู่">อยู่</option>
+                    <option value="ขายแล้ว">ขายแล้ว</option>
                   </select>
                 </div>
               </div>
-              
             </div>
             <div class="row">
               <div class="col-12 text-right mt-3 text-center">
@@ -458,18 +456,12 @@
               </div>
             </div>
             <div class="row ">
-              <div class="col-4 offset-4 text-left mt-3 ">
-                <div class="form-group">
-                  <label for="exampleFormControlFile1"
-                    >Example file image</label
-                  >
-                  <input type="file" id="files" name="files[]" multiple />
-                </div>
-              </div>
-            </div>
-            <div class="row ">
               <div class="col-6 offset-3 text-center mt-3 ">
                 <div class="form-group">
+                  <div class="form-group ">
+                    <label for="exampleFormControlFile1">เพิ่มรูป</label><br />
+                    <input type="file" id="files" name="files[]" multiple />
+                  </div>
                   <button class="btn btn-success" @click="test">Success</button>
                 </div>
               </div>
@@ -498,148 +490,182 @@ export default {
   },
   methods: {
     async test() {
-      if(document.getElementById("Model1").value == "" ||document.getElementById("Year").value == "" ||document.getElementById("Detailcar").value == "" ||document.getElementById("CC").value == "" ||document.getElementById("Gear").value == "" ||document.getElementById("seats").value == "" ||document.getElementById("Mileage").value == "" ||document.getElementById("Color").value == "" ||document.getElementById("Register").value == "" ||document.getElementById("Province").value == "" ||document.getElementById("Price").value == "" ||document.getElementById("Status").value == "")
-      {
+      if (
+        document.getElementById("Model1").value == "" ||
+        document.getElementById("Year").value == "" ||
+        document.getElementById("Detailcar").value == "" ||
+        document.getElementById("CC").value == "" ||
+        document.getElementById("Gear").value == "" ||
+        document.getElementById("seats").value == "" ||
+        document.getElementById("Mileage").value == "" ||
+        document.getElementById("Color").value == "" ||
+        document.getElementById("Register").value == "" ||
+        document.getElementById("Province").value == "" ||
+        document.getElementById("Price").value == "" ||
+        document.getElementById("Status").value == ""
+      ) {
         swal("กรุณาใส่ข้อมูลให้ครบ", "You clicked the button!", "error");
-      }
-      else{
+      } 
+      else {
+        // console.log(datas);
+        const axios = require("axios").default;
         var storageRef = firebase.storage().ref("img");
-      // Get the file from DOM
-      var file = document.getElementById("files").files[0];
-      var file1 = document.getElementById("files").files[1];
-      var file2 = document.getElementById("files").files[2];
-      console.log(file.name);
-      console.log(file1.name);
-      console.log(file2.name);
-      // console.log(file2.name);
-      //dynamically s1et reference to the file name
-      var thisRef = storageRef.child(file.name);
-      //put request upload file to firebase storage
-      await thisRef.put(file).then((snapshot) => {
-        // swal("Good job!", "You clicked the button!", "success");
-        console.log("Uploaded a blob or file!");
-      });
-       thisRef = storageRef.child(file1.name);
-      //put request upload file to firebase storage
-      await thisRef.put(file1).then((snapshot) => {
-        // swal("Good job!", "You clicked the button!", "success");
-        console.log("Uploaded a blob or file!");
-      });
-       thisRef = storageRef.child(file2.name);
-      //put request upload file to firebase storage
-      await thisRef.put(file2).then((snapshot) => {
-        // swal("Good job!", "You clicked the button!", "success");
-        console.log("Uploaded a blob or file!");
-      });
-      const storage = firebase.storage();
-      // let linkimg = "";
-      // Get metadata properties
-      let linkimg;
-      let self = this;
-      await storage
-        .ref("img")
-        .child(file.name)
-        .getDownloadURL()
-        .then((url) => {
-          // console.log(typeof url);
-          // console.log(url);
-          self.linkimg = url;
-          self.datas.push(url);
-
-          storage
-            .ref("img")
-            .child(file1.name)
-            .getDownloadURL()
-            .then((url) => {
-              // console.log(typeof url);
-              // console.log(url);
-              self.linkimg = url;
-              self.datas.push(url);
-
-              storage
-                .ref("img")
-                .child(file2.name)
-                .getDownloadURL()
-                .then((url) => {
-                  // console.log(typeof url);
-                  // console.log(url);
-                  self.linkimg = url;
-                  self.datas.push(url);
-                });
-            });
+        // Get the file from DOM
+        var file = document.getElementById("files").files[0];
+        var file1 = document.getElementById("files").files[1];
+        var file2 = document.getElementById("files").files[2];
+        console.log(file.name);
+        console.log(file1.name);
+        console.log(file2.name);
+        // console.log(file2.name);
+        //dynamically s1et reference to the file name
+        var thisRef = storageRef.child(file.name);
+        //put request upload file to firebase storage
+        await thisRef.put(file).then((snapshot) => {
+          // swal("Good job!", "You clicked the button!", "success");
+          console.log("Uploaded a blob or file!");
         });
-
-      console.log(linkimg);
-      console.log(self.linkimg);
-      console.log(self.datas);
-      console.log(self.datas[0]);
-      console.log(self.datas[1]);
-      console.log(self.datas[2]);
-      // console.log(datas);
-      const axios = require("axios").default;
-      var data = new FormData();
-      var count = 0;
-      data.append("Model1", document.querySelector("select[name=Model1]").value);
-      data.append("Year", document.querySelector("select[name=Year]").value);
-      data.append(
-        "Detailcar",
-        document.querySelector("input[name=Detailcar]").value
-      );
-      data.append("CC", document.querySelector("input[name=CC]").value);
-      data.append("Gear", document.querySelector("select[name=Gear]").value);
-      data.append("seats", document.querySelector("select[name=seats]").value);
-      data.append(
-        "Mileage",
-        document.querySelector("input[name=Mileage]").value
-      );
-      data.append("Color", document.querySelector("select[name=Color]").value);
-      data.append(
-        "Register",
-        document.querySelector("input[name=Register]").value
-      );
-      data.append(
-        "Province",
-        document.querySelector("select[name=Province]").value
-      );
-      data.append("Price", document.querySelector("input[name=Price]").value);
-      data.append(
-        "Promotion",
-        document.querySelector("input[name=Promotion]").value
-      );
-      data.append(
-        "Status",
-        document.querySelector("select[name=Status]").value
-      );
-      data.append(
-        "Detail",
-        document.querySelector("textarea[name=Detail]").value
-      );
-      data.append("Pic1", self.datas[0]);
-      data.append("Pic2", self.datas[1]);
-      data.append("Pic3", self.datas[2]);
-      console.log(data);
-      if (1) {
-        data.forEach((element) => {
-          console.log(element);
-          console.log(count);
-          count++;
+        thisRef = storageRef.child(file1.name);
+        //put request upload file to firebase storage
+        await thisRef.put(file1).then((snapshot) => {
+          // swal("Good job!", "You clicked the button!", "success");
+          console.log("Uploaded a blob or file!");
         });
-      }
-      console.log(data);
+        thisRef = storageRef.child(file2.name);
+        //put request upload file to firebase storage
+        await thisRef.put(file2).then((snapshot) => {
+          // swal("Good job!", "You clicked the button!", "success");
+          console.log("Uploaded a blob or file!");
+        });
+        const storage = firebase.storage();
+        // let linkimg = "";
+        // Get metadata properties
+        let linkimg;
+        let self = this;
+        await storage
+          .ref("img")
+          .child(file.name)
+          .getDownloadURL()
+          .then((url) => {
+            // console.log(typeof url);
+            // console.log(url);
+            self.linkimg = url;
+            self.datas.push(url);
 
-      axios.post("http://localhost:80/insertmain.php", data)
-          .then((response) => {
-            console.log(response.data);
-            console.log(count);
-            swal("บันทึกสำเร็จ", "You clicked the button!", "success");
+            storage
+              .ref("img")
+              .child(file1.name)
+              .getDownloadURL()
+              .then((url) => {
+                // console.log(typeof url);
+                // console.log(url);
+                self.linkimg = url;
+                self.datas.push(url);
+
+                storage
+                  .ref("img")
+                  .child(file2.name)
+                  .getDownloadURL()
+                  .then((url) => {
+                    // console.log(typeof url);
+                    // console.log(url);
+                    self.linkimg = url;
+                    self.datas.push(url);
+
+                    var data = new FormData();
+                    var count = 0;
+                    data.append(
+                      "Model1",
+                      document.querySelector("select[name=Model1]").value
+                    );
+                    data.append(
+                      "Year",
+                      document.querySelector("select[name=Year]").value
+                    );
+                    data.append(
+                      "Detailcar",
+                      document.querySelector("input[name=Detailcar]").value
+                    );
+                    data.append(
+                      "CC",
+                      document.querySelector("input[name=CC]").value
+                    );
+                    data.append(
+                      "Gear",
+                      document.querySelector("select[name=Gear]").value
+                    );
+                    data.append(
+                      "seats",
+                      document.querySelector("select[name=seats]").value
+                    );
+                    data.append(
+                      "Mileage",
+                      document.querySelector("input[name=Mileage]").value
+                    );
+                    data.append(
+                      "Color",
+                      document.querySelector("select[name=Color]").value
+                    );
+                    data.append(
+                      "Register",
+                      document.querySelector("input[name=Register]").value
+                    );
+                    data.append(
+                      "Province",
+                      document.querySelector("select[name=Province]").value
+                    );
+                    data.append(
+                      "Price",
+                      document.querySelector("input[name=Price]").value
+                    );
+                    data.append(
+                      "Promotion",
+                      document.querySelector("input[name=Promotion]").value
+                    );
+                    data.append(
+                      "Status",
+                      document.querySelector("select[name=Status]").value
+                    );
+                    data.append(
+                      "Detail",
+                      document.querySelector("textarea[name=Detail]").value
+                    );
+                    data.append("Pic1", self.datas[0]);
+                    data.append("Pic2", self.datas[1]);
+                    data.append("Pic3", self.datas[2]);
+                    console.log(data);
+                    if (1) {
+                      data.forEach((element) => {
+                        console.log(element);
+                        console.log(count);
+                        count++;
+                      });
+                    }
+                    console.log(data);
+
+                    axios
+                      .post("http://localhost:80/insertmain.php", data)
+                      .then((response) => {
+                        console.log(response.data);
+                        console.log(count);
+                        swal("บันทึกสำเร็จ", {
+                                icon:"success",
+                                buttons: false,
+                                timer: 1800,
+                              });
+                          setTimeout(() => {
+                          window.location.href = "/edit";
+                        }, 2000);
+                      });
+                  });
+              });
           });
       }
-      
     },
   },
 
   components: { Menu },
-}
+};
 </script>
 
 <style>
@@ -656,7 +682,7 @@ export default {
   width: 100%;
   height: 500px;
 }
-.Status{
+.Status {
   width: 5px;
 }
 </style>

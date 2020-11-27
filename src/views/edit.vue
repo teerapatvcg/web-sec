@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div><Menu />
     <div class="wrapper">
-      <Menu />
       <div class="content-wrapper">
         <div class="card">
           <div class="card-header text-center">
@@ -69,7 +68,7 @@
                           colspan="1"
                           aria-label="CSS grade: activate to sort column ascending"
                         >
-                          Promotion
+                          แก้ไขรูป
                         </th>
                         <th
                           class="sorting"
@@ -99,16 +98,20 @@
                         <td>{{i.Model}}</td>
                         <td>{{i.Register}}</td>
                         <td class="sorting_1">{{i.Status}}</td>
-                        <td class="sorting_1">{{i.Promotion}}</td>
+                        <td class="sorting_1">
+                            <button type="button" class="btn btn-success" @click="ci_img(i.id)">
+                              แก้ไข รูป
+                            </button>
+                           </td>
                         <td>
-                          <button type="button" class="btn btn-warning">
-                            แก้ไข
-                          </button>
+                          <button type="button" class="btn btn-warning" @click="ci_edit(i.id)">
+                              แก้ไข
+                            </button>
                         </td>
                         <td>
-                          <button type="button" class="btn btn-danger">
-                            ลบ
-                          </button>
+                          <button type="button" class="btn btn-danger" @click="ci_delete(i.id)">
+                              ลบ
+                            </button>
                         </td>
                       </tr>
                     </tbody>
@@ -138,16 +141,6 @@ export default {
       datas: [],
     };
   },
-  // beforeCreate() {
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //     if (!user) {
-  //       this.$router.replace("/Login");
-  //       //alert("You don't have a permission")
-  //     } else {
-  //       console.log(user.refreshToken);
-  //     }
-  //   });
-  // },
   async mounted() {
     const axios = require("axios");
     await axios
@@ -170,14 +163,34 @@ export default {
     });
   },
   methods: {
-    ci_home() {
-      window.location.href = "/main";
+    ci_img(id_car_img) {
+      localStorage.setItem("id_car_img",id_car_img);
+      window.location.href = "/edit_img";
     },
-    ci_contact() {
-      window.location.href = "/main";
+    
+      ci_edit(edit_id) {
+      localStorage.setItem("edit_id",edit_id);
+      window.location.href = "/edit_view";
     },
-    ci_promotion() {
-      window.location.href = "/main";
+    
+    ci_delete(deletee) {
+      const axios = require("axios");
+      var data = new FormData();
+      localStorage.setItem("delete1",deletee);
+      data.append("id_carr",localStorage.getItem("delete1"));
+      axios.post("http://localhost:80/delete_car.php", data)
+          .then((response) => {
+            console.log(response.data);
+            console.log(count);
+          });
+          swal("ลบสำเร็จ", {
+            icon:"success",
+            buttons: false,
+            timer: 1800,
+          });
+      setTimeout(() => {
+                          window.location.href = "/edit";
+                        }, 2000);
     },
   },
   components: { Menu },
