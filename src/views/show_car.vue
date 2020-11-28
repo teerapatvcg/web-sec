@@ -4,7 +4,7 @@
     <div class="wrapper">
       <div class="content-wrapper">
         <div class="card text-center">
-          <div class="card-header" v-for="i in datas"><h4>{{i.Year}} Honda {{i.Model}}</h4></div>
+          <div class="card-header alert alert-primary" v-for="i in datas"><h4>{{i.Year}} Honda {{i.Model}} {{i.Detailcar}}</h4></div>
           <div class="card-body">
             <div class="row" v-for="i in datas">
               <div class="col-7">
@@ -228,10 +228,10 @@
                           </div>
                           <div class="row">
                             <div class="col-6 x">
-                              <label for="">{{i.Price}}</label>
+                              <label for="">{{i.Price}} บาท</label>
                             </div>
                             <div class="col-6">
-                              <label for="" class="">{{i.Promotion}}</label>
+                              <label for="" class="">ลดราคา {{i.Promotion}} บาท</label>
                             </div>
                             <div class="col-12 ">
                               <div class="alert alert-warning " role="alert">

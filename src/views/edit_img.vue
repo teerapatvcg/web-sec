@@ -14,7 +14,7 @@
                       <div class="col-4 offset-4 text-left mt-3 ">
                         <div class="form-group">
                           <label for="exampleFormControlFile1"
-                            >เพิ่ม/แก้ไขรูป</label
+                            >แก้ไขรูป</label
                           >
                           <input
                             type="file"

@@ -1,38 +1,22 @@
 <template>
-  <div class="home" style="background-color:powderblue;">
-    <div class="row">
-      <div class="col-12 offset-5 "> 
-        <div class="card" style="width: 24rem;">
-          <div class="card-body">
-            <h1>Login</h1>
-            <form class="" action="#!" @submit="login">
-              <div class="form-group">
-                <label for="fname">Username:</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="login"
-                  v-model="email"
-                  placeholder="email"
-                />
-              </div>
-              <div class="form-group">
-                <label for="lname">Password:</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  v-model="password"
-                  placeholder="password"
-                />
-              </div>
-              <button type="submit" class="btn btn-primary">submit</button>
-            </form>
-          </div>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form" @submit="login">
+            <h1>LOGIN</h1>
+            <input type="email"
+            id="email"
+            name="login"
+            v-model="email"
+            placeholder="email"/>
+            <input type="password"
+            id="password"
+            name="password"
+            v-model="password"
+            placeholder="password"/>
+            <button type="submit">login</button>
+          </form>
         </div>
       </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -53,13 +37,26 @@ export default {
             var user = firebase.auth().currentUser;
             console.log(user);
             if (user != null) {
-              swal("Login success", "You clicked the button!", "success");
+              swal("Login success", {
+                    icon:"success",
+                    buttons: false,
+                    timer: 1800,
+                  });
+              setTimeout(() => {
+                          
+                        }, 2000);
               this.$router.replace("/main");
             }
           },
           (err) => {
             //alert(err.message);
-            swal("Login error", "You clicked the button!", "error");
+            swal("Login error", {
+                    icon:"error",
+                    buttons: false,
+                    timer: 1800,
+                  });
+              setTimeout(() => {
+                        }, 2000);
           }
         );
       e.preventDefault();
