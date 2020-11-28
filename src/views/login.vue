@@ -2,7 +2,13 @@
     <div class="login-page">
         <div class="form">
           <form class="login-form" @submit="login">
-            <h1>LOGIN</h1>
+            <img
+              src="../assets/tf2car2.png"
+              style="opacity: 0.8"
+              class="mx-auto"
+            />
+            <br>
+            <br>
             <input type="email"
             id="email"
             name="login"
