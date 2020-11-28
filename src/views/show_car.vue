@@ -4,7 +4,7 @@
     <div class="wrapper">
       <div class="content-wrapper">
         <div class="card text-center">
-          <div class="card-header alert alert-primary" v-for="i in datas"><h4>{{i.Year}} Honda {{i.Model}} {{i.Detailcar}}</h4></div>
+          <div class="card-header alert alert-info" v-for="i in datas"><h4>{{i.Year}} Honda {{i.Model}} {{i.Detailcar}}</h4></div>
           <div class="card-body">
             <div class="row" v-for="i in datas">
               <div class="col-7">
