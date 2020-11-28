@@ -6,16 +6,16 @@
           <div class="card-header"></div>
           <div class="card-body ">
             <div class="card mx-auto" style="width: 50%;">
-              <div class="card-body">
+              <div class="card-body sha">
                 <div class="row">
                   <div class="col ">
                     <form action="#">
                       <div class="row">
                         <div class="col-6 ">
-                        <div class="alert alert-primary" role="alert">เบอร์โทรศัพท์</div>
+                        <div class="alert alert-primary sha" role="alert">เบอร์โทรศัพท์</div>
                         </div>
                         <div class="col-6 ">
-                          <div class="alert alert-success" role="alert">ID LINE</div>
+                          <div class="alert alert-success sha" role="alert">ID LINE</div>
                         </div>
                       </div>
                       <div class="row" v-for="i in datas">
@@ -29,10 +29,10 @@
 
                       <div class="row" >
                         <div class="col-6  mt-3">
-                        <div class="alert alert-info" role="alert">E-mail</div>
+                        <div class="alert alert-info sha" role="alert">E-mail</div>
                         </div>
                         <div class="col-6  mt-3">
-                          <div class="alert alert-info" role="alert">ที่อยู่ร้าน</div>
+                          <div class="alert alert-info sha" role="alert">ที่อยู่ร้าน</div>
                         </div>
                       </div>
                       <div class="row" v-for="i in datas">
@@ -99,5 +99,7 @@ export default {
 </script>
 
 <style>
-
+.sha{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 </style>

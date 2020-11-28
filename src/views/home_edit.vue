@@ -6,7 +6,7 @@
           <div class="card-header"></div>
           <div class="card-body ">
             <div class="card mx-auto" style="width: 50%;">
-              <div class="card-body">
+              <div class="card-body sha">
                 <div class="row">
                   <div class="col ">
                       <div class="row ">
@@ -149,4 +149,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.sha{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>

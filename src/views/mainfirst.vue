@@ -87,7 +87,7 @@
             <h5 class="alert alert-info tee">รถ Promotion</h5>
             <div class="row" >
             <div class="col-3" v-for="i in datass">
-                <div class="card mx-auto text-center border border-info" style="width: 15rem">
+                <div class="card mx-auto text-center sha" style="width: 15rem">
                   <div id="img_container">
                     <img
                       :src="i.Pic1"
@@ -175,4 +175,7 @@ export default {
 </script>
 
 <style>
+.sha{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 </style>

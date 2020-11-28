@@ -9,7 +9,7 @@
             <div class="row" v-for="i in datas">
               <div class="col-7">
                 <br /><br />
-                <div class="card mx-auto" style="height=200px;width: 800px;">
+                <div class="card mx-auto sha" style="height=200px;width: 800px;">
                   <div class="row">
                     <div class="col-12 mx-auto mb-5">
                       <div
@@ -89,7 +89,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="card mx-auto border border-info" style="height=200px;width: 800px;">
+                <div class="card mx-auto border border-info sha" style="height=200px;width: 800px;">
                   <div class="row  alert alert-info">
                     <div class="col-6 mx-auto " >
                       <div class="" role="alert">
@@ -106,7 +106,7 @@
                 </div>
               </div>
               <div class="col-5" v-for="i in datas">
-                <div class="card mx-auto border border-info" style="width: 60%;">
+                <div class="card mx-auto border border-info sha" style="width: 60%;">
                   <div class="card-body">
                     <div class="row">
                       <div class="col ">
@@ -304,5 +304,8 @@ export default {
 .te {
   width: 100%;
   height: 500px;
+}
+.sha{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
