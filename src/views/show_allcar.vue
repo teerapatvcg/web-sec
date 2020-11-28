@@ -8,7 +8,7 @@
           <div class="alert alert-primary" role="alert">รถที่ค้นหา</div>
             <div class="row" >
             <div class="col-3" v-for="i in datas">
-                <div class="card mx-auto text-center" style="width: 18rem">
+                <div class="card mx-auto text-center border border-primary" style="width: 18rem">
                   <div id="img_container">
                     <img
                       :src="i.Pic1"

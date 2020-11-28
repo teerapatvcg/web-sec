@@ -87,7 +87,7 @@
             <h5 class="alert alert-info tee">รถ Promotion</h5>
             <div class="row" >
             <div class="col-3" v-for="i in datass">
-                <div class="card mx-auto text-center " style="width: 15rem">
+                <div class="card mx-auto text-center border border-info" style="width: 15rem">
                   <div id="img_container">
                     <img
                       :src="i.Pic1"

@@ -89,7 +89,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="card mx-auto" style="height=200px;width: 800px;">
+                <div class="card mx-auto border border-info" style="height=200px;width: 800px;">
                   <div class="row  alert alert-info">
                     <div class="col-6 mx-auto " >
                       <div class="" role="alert">
@@ -106,7 +106,7 @@
                 </div>
               </div>
               <div class="col-5" v-for="i in datas">
-                <div class="card mx-auto" style="width: 60%;">
+                <div class="card mx-auto border border-info" style="width: 60%;">
                   <div class="card-body">
                     <div class="row">
                       <div class="col ">
