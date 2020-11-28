@@ -459,7 +459,7 @@
               <div class="col-6 offset-3 text-center mt-3 ">
                 <div class="form-group">
                   <div class="form-group ">
-                    <label for="exampleFormControlFile1">เพิ่มรูป</label><br />
+                    <label for="exampleFormControlFile1">เพิ่มรูป (ใส่ 3 รูป)</label><br />
                     <input type="file" id="files" name="files[]" multiple />
                   </div>
                   <button class="btn btn-success" @click="test">Success</button>

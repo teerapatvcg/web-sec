@@ -86,13 +86,6 @@ const routes = [
   }
   ,
   {
-    path: '/seach',
-    name: 'seach',
-    beforeEnter: check,
-    component: () => import( '../views/seach.vue')
-  }
-  ,
-  {
     path: '/show_con',
     name: 'show_con',
     component: () => import( '../views/show_con.vue')

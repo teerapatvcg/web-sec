@@ -12,7 +12,7 @@
                       <div class="row ">
                             <div class="col-4 offset-4 text-left mt-3 ">
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">เพิ่มรูปโฆษณา</label>
+                                <label for="exampleFormControlFile1">เพิ่มรูปโฆษณา (ใส่ 3 รูป)</label>
                                 <input type="file" id="files" name="files[]" multiple />
                             </div>
                             </div>

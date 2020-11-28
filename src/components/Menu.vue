@@ -234,7 +234,15 @@ export default {
         .auth()
         .signOut()
         .then((res) => {
-          this.$router.replace("/login");
+          swal("Logout success", {
+            icon:"success",
+            buttons: false, 
+            timer: 1800,
+          });
+      setTimeout(() => {
+                          this.$router.replace("/login");
+                        }, 2000);
+          
           //alert(res);
         });
     },
