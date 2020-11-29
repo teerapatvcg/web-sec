@@ -9,6 +9,7 @@ database: firebase , sql
 วิธีการติดตั้ง
 ลง node.js
 ลง xampp แล้ว run Apache กับ   MySQL
+เอาไฟล์ใน file_php ไปใส่ใน xampp/htdoc
 import ไฟล์  web.sql เข้า sql
 npm install sweetalert --save
 npm install axios
