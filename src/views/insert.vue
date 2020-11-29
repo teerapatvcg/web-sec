@@ -8,10 +8,10 @@
           <div class="card-body">
             <div class="row">
               <div class="col-6 text-right">
-                <label for="exampleFormControlSelect1">รุ่น</label>
+                <label for="exampleFormControlSelect1"><span style="color:red;">*</span>รุ่น</label>
               </div>
               <div class="col-6 text-left">
-                <label for="exampleFormControlSelect1">ปี</label>
+                <label for="exampleFormControlSelect1"><span style="color:red;">*</span>ปี</label>
               </div>
             </div>
             <div class="row">
@@ -159,10 +159,10 @@
 
             <div class="row">
               <div class="col-6 text-right mt-3">
-                <label for="exampleInputEmail1">รายละเอียดรุ่น</label>
+                <label for="exampleInputEmail1"><span style="color:red;">*</span>รายละเอียดรุ่น</label>
               </div>
               <div class="col-6 text-left mt-3">
-                <label for="exampleInputEmail1">ขนาดเครื่องยนต์</label>
+                <label for="exampleInputEmail1"><span style="color:red;">*</span>ขนาดเครื่องยนต์</label>
               </div>
             </div>
             <div class="row">
@@ -191,10 +191,10 @@
             </div>
             <div class="row">
               <div class="col-6 text-right mt-3">
-                <label for="exampleFormControlSelect1">ระบบเกียร์</label>
+                <label for="exampleFormControlSelect1"><span style="color:red;">*</span>ระบบเกียร์</label>
               </div>
               <div class="col-6 text-left mt-3">
-                <label for="exampleFormControlSelect1">จำนวนที่นั่ง</label>
+                <label for="exampleFormControlSelect1"><span style="color:red;">*</span>จำนวนที่นั่ง</label>
               </div>
             </div>
             <div class="row">
@@ -230,10 +230,10 @@
             </div>
             <div class="row">
               <div class="col-6 text-right mt-3">
-                <label for="exampleInputEmail1 x"> เลขไมล์ (กม.) </label>
+                <label for="exampleInputEmail1 x"><span style="color:red;">*</span> เลขไมล์ (กม.) </label>
               </div>
               <div class="col-6 text-left mt-3">
-                <label for="exampleFormControlSelect1">สี</label>
+                <label for="exampleFormControlSelect1"><span style="color:red;">*</span>สี</label>
               </div>
             </div>
             <div class="row">
@@ -276,10 +276,10 @@
             </div>
             <div class="row">
               <div class="col-6 text-right mt-3">
-                <label for="exampleInputEmail1 x">ทะเบียน</label>
+                <label for="exampleInputEmail1 x"><span style="color:red;">*</span>ทะเบียน</label>
               </div>
               <div class="col-6 text-left mt-3">
-                <label for="exampleFormControlSelect1">จังหวัด</label>
+                <label for="exampleFormControlSelect1"><span style="color:red;">*</span>จังหวัด</label>
               </div>
             </div>
             <div class="row">
@@ -387,7 +387,7 @@
             </div>
             <div class="row">
               <div class="col-6 text-right mt-3">
-                <label for="exampleInputEmail1 x">ราคา</label>
+                <label for="exampleInputEmail1 x"><span style="color:red;">*</span>ราคา</label>
               </div>
               <div class="col-6 text-left mt-3">
                 <label for="exampleFormControlSelect1">Promotion</label>
@@ -418,7 +418,7 @@
             </div>
             <div class="row">
               <div class="col-12 text-right mt-3 text-center">
-                <label for="exampleInputEmail1 x">สถานะ</label>
+                <label for="exampleInputEmail1 x"><span style="color:red;">*</span>สถานะ</label>
               </div>
             </div>
             <div class="row ">
@@ -459,7 +459,7 @@
               <div class="col-6 offset-3 text-center mt-3 ">
                 <div class="form-group">
                   <div class="form-group ">
-                    <label for="exampleFormControlFile1">เพิ่มรูป (ใส่ 3 รูป)</label><br />
+                    <label for="exampleFormControlFile1" ><span style="color:red;">*</span>เพิ่มรูป (ใส่ 3 รูป)</label><br />
                     <input type="file" id="files" name="files[]" multiple />
                   </div>
                   <button class="btn btn-success" @click="test">Success</button>

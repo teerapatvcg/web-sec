@@ -132,7 +132,14 @@ export default {
                   axios.post("http://localhost:80/home_edit.php", data).then((response) => {
                     console.log(response.data);
                     console.log(count);
-                    swal("บันทึกสำเร็จ", "You clicked the button!", "success");
+                    swal("แก้ไขรูปสำเร็จ", {
+                                  icon:"success",
+                                  buttons: false,
+                                  timer: 1800,
+                                });
+                            setTimeout(() => {
+                          window.location.href = "/main";
+                        }, 2000);;
                     
                   });
                 });
